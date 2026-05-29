@@ -4,60 +4,141 @@ using System.Collections;
 public class ClickObjectS : MonoBehaviour
 {
     private SpriteRenderer rend;
-
     private Coroutine currentAnimation;
 
-    private enum State
+    private enum ObjectState
     {
         Normal,
-        TurningRed,
+        Anomaly,
+        Distraction,
+        Mistake
+    }
+
+    private enum TransitionState
+    {
+        None,
+        Transforming,
         Recovering
     }
 
-    private State currentState = State.Normal;
+    private ObjectState currentState = ObjectState.Normal;
+    private TransitionState currentTransition = TransitionState.None;
 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
 
-        rend.material.color = Color.green;
+        rend.color = Color.green;
 
-        StartCoroutine(GenerateAnomalyLoop());
+        StartCoroutine(GenerateStateLoop());
     }
 
-    IEnumerator GenerateAnomalyLoop()
+    IEnumerator GenerateStateLoop()
     {
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(5f, 25f));
 
-            if (currentState == State.Normal)
+            if (currentState == ObjectState.Normal
+                && currentTransition == TransitionState.None)
             {
-                if (currentAnimation != null)
-                {
-                    StopCoroutine(currentAnimation);
-                }
+                int randomChoice = Random.Range(0, 2);
 
-                currentAnimation = StartCoroutine(TurnRedSlowly());
+                if (randomChoice == 0)
+                {
+                    StartAnomaly();
+                }
+                else
+                {
+                    StartDistraction();
+                }
             }
         }
     }
 
-    IEnumerator TurnRedSlowly()
+    void StartAnomaly()
     {
-        currentState = State.TurningRed;
+        currentState = ObjectState.Anomaly;
 
-        float duration = 2f;
+        if (currentAnimation != null)
+        {
+            StopCoroutine(currentAnimation);
+        }
+
+        currentAnimation = StartCoroutine(
+            ChangeColorSmoothly(Color.red, 2f)
+        );
+    }
+
+    void StartDistraction()
+    {
+        currentState = ObjectState.Distraction;
+
+        if (currentAnimation != null)
+        {
+            StopCoroutine(currentAnimation);
+        }
+
+        currentAnimation = StartCoroutine(
+            ChangeColorSmoothly(Color.orange, 2f)
+        );
+
+        StartCoroutine(DistractionLifetime());
+    }
+
+    IEnumerator DistractionLifetime()
+    {
+        yield return new WaitForSeconds(Random.Range(3f, 7f));
+
+        if (currentState == ObjectState.Distraction)
+        {
+            RecoverToNormal();
+        }
+    }
+
+    void RecoverToNormal()
+    {
+        currentState = ObjectState.Normal;
+
+        if (currentAnimation != null)
+        {
+            StopCoroutine(currentAnimation);
+        }
+
+        currentAnimation = StartCoroutine(
+            ReturnToGreen(1f)
+        );
+    }
+
+    void TriggerMistake()
+    {
+        currentState = ObjectState.Mistake;
+
+        if (currentAnimation != null)
+        {
+            StopCoroutine(currentAnimation);
+        }
+
+        rend.color = Color.blue;
+
+        currentAnimation = StartCoroutine(
+            ReturnToGreen(1f)
+        );
+    }
+
+    IEnumerator ChangeColorSmoothly(Color targetColor, float duration)
+    {
+        currentTransition = TransitionState.Transforming;
+
         float elapsed = 0f;
 
-        Color startColor = rend.material.color;
-        Color targetColor = Color.red;
+        Color startColor = rend.color;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
 
-            rend.material.color = Color.Lerp(
+            rend.color = Color.Lerp(
                 startColor,
                 targetColor,
                 elapsed / duration
@@ -66,22 +147,24 @@ public class ClickObjectS : MonoBehaviour
             yield return null;
         }
 
-        rend.material.color = Color.red;
+        rend.color = targetColor;
+
+        currentTransition = TransitionState.None;
     }
 
     IEnumerator ReturnToGreen(float duration)
     {
-        currentState = State.Recovering;
+        currentTransition = TransitionState.Recovering;
 
         float elapsed = 0f;
 
-        Color startColor = rend.material.color;
+        Color startColor = rend.color;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
 
-            rend.material.color = Color.Lerp(
+            rend.color = Color.Lerp(
                 startColor,
                 Color.green,
                 elapsed / duration
@@ -90,35 +173,30 @@ public class ClickObjectS : MonoBehaviour
             yield return null;
         }
 
-        rend.material.color = Color.green;
+        rend.color = Color.green;
 
-        currentState = State.Normal;
+        currentTransition = TransitionState.None;
+        currentState = ObjectState.Normal;
     }
 
     void OnMouseDown()
-{
-    if (currentState == State.Recovering)
-        return;
-
-    if (currentAnimation != null)
     {
-        StopCoroutine(currentAnimation);
+        if (currentTransition == TransitionState.Recovering)
+            return;
+
+        // ANOMALÍA CORRECTA
+        if (currentState == ObjectState.Anomaly)
+        {
+            RecoverToNormal();
+        }
+
+        // DISTRACCIÓN O NORMAL
+        else if (
+            currentState == ObjectState.Normal
+            || currentState == ObjectState.Distraction
+        )
+        {
+            TriggerMistake();
+        }
     }
-
-    Color currentColor = rend.material.color;
-
-    bool anomalyVisible =
-        currentColor.r > 0;
-
-    if (anomalyVisible)
-    {
-        currentAnimation = StartCoroutine(ReturnToGreen(0.9f));
-    }
-    else
-    {
-        rend.material.color = Color.blue;
-
-        currentAnimation = StartCoroutine(ReturnToGreen(0.8f));
-    }
-}
 }
