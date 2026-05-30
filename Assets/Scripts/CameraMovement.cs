@@ -2,16 +2,21 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float speed = 0.3f;
+    public bool canMove = true;
+
+    public float speed = 0.6f;
 
     public float endPoint = 85f;
 
     void Update()
     {
-        // Solo avanzar si no llegó al final
-        if (transform.position.z < endPoint)
+        if (canMove)
         {
-            transform.position += Vector3.forward * speed * Time.deltaTime;
+            // Solo avanzar si no llegó al final
+            if (transform.position.z < endPoint)
+            {
+                transform.position += Vector3.forward * speed * Time.deltaTime;
+            }   
         }
     }
 }
