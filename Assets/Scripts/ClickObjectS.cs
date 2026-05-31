@@ -266,7 +266,7 @@ public class ClickObjectS : MonoBehaviour
         currentState = ObjectState.Normal;
     }
 
-    void OnMouseDown()
+    public void OnClicked()
     {
         if (currentTransition == TransitionState.Recovering)
             return;
