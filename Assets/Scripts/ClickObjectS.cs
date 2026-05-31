@@ -5,6 +5,13 @@ public class ClickObjectS : MonoBehaviour
 {
     private SpriteRenderer rend;
     private Coroutine currentAnimation;
+    
+    public enum ObjectPlacementType
+    {
+        Wall,
+        Ceiling,
+        Floor
+    }
 
     private enum ObjectState
     {
@@ -23,14 +30,91 @@ public class ClickObjectS : MonoBehaviour
 
     private ObjectState currentState = ObjectState.Normal;
     private TransitionState currentTransition = TransitionState.None;
+    
+    private Transform player;
+    
+    public ObjectPlacementType placementType;
+
+    public float wallForwardRange = 20f;
+    public float wallBackwardRange = 5f;
+
+    public float floorForwardRange = 28f;
+    public float floorZOffset = -7f;
+
+    public float ceilingForwardRange = 25f;
+    public float ceilingZOffset = -5f;  
+
+    bool IsInsideActiveRange()
+    {
+        float currentForwardRange = 0f;
+        float currentBackwardRange = 0f;
+
+        float zOffset = 0f;
+
+        switch (placementType)
+        {
+            case ObjectPlacementType.Ceiling:
+                currentForwardRange = ceilingForwardRange;
+                currentBackwardRange = 0f;
+                zOffset = ceilingZOffset;
+                break;
+
+            case ObjectPlacementType.Floor:
+                currentForwardRange = floorForwardRange;
+                currentBackwardRange = 0f;
+                zOffset = floorZOffset;
+                break;
+
+            case ObjectPlacementType.Wall:
+                currentForwardRange = wallForwardRange;
+                currentBackwardRange = wallBackwardRange;
+                break;
+        }
+
+        float relativeZ =
+            transform.position.z
+            - player.position.z
+            + zOffset;
+
+        // DELANTE
+        if (relativeZ >= 0)
+        {
+            return relativeZ <= currentForwardRange;
+        }
+
+        // DETRÁS
+        else
+        {
+            return Mathf.Abs(relativeZ)
+                <= currentBackwardRange;
+        }
+    }
 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
 
+        player = GameObject
+            .FindGameObjectWithTag("Player")
+            .transform;
+
         rend.color = Color.green;
 
         StartCoroutine(GenerateStateLoop());
+    }
+
+    void Update()
+    {
+        if (!IsInsideActiveRange())
+        {
+            if (
+                currentState != ObjectState.Normal
+                && currentTransition != TransitionState.Recovering
+            )
+            {
+                RecoverToNormal();
+            }
+        }
     }
 
     IEnumerator GenerateStateLoop()
@@ -38,7 +122,10 @@ public class ClickObjectS : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(5f, 25f));
-
+            if (!IsInsideActiveRange())
+            {
+                continue;
+            }
             if (currentState == ObjectState.Normal
                 && currentTransition == TransitionState.None)
             {
@@ -197,6 +284,76 @@ public class ClickObjectS : MonoBehaviour
         )
         {
             TriggerMistake();
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (player == null)
+        {
+            GameObject playerObject =
+                GameObject.FindGameObjectWithTag("Player");
+
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        float currentForwardRange = 0f;
+        float currentBackwardRange = 0f;
+
+        float zOffset = 0f;
+
+        switch (placementType)
+        {
+            case ObjectPlacementType.Ceiling:
+                currentForwardRange = ceilingForwardRange;
+                currentBackwardRange = 0f;
+                zOffset = ceilingZOffset;
+                break;
+
+            case ObjectPlacementType.Floor:
+                currentForwardRange = floorForwardRange;
+                currentBackwardRange = 0f;
+                zOffset = floorZOffset;
+                break;
+
+            case ObjectPlacementType.Wall:
+                currentForwardRange = wallForwardRange;
+                currentBackwardRange = wallBackwardRange;
+                break;
+        }
+
+        Gizmos.color = Color.cyan;
+
+        // DELANTE
+        Vector3 forwardCenter =
+            player.position
+            + Vector3.forward *
+            ((currentForwardRange / 2f) - zOffset);
+
+        Gizmos.DrawWireCube(
+            forwardCenter,
+            new Vector3(3f, 3f, currentForwardRange)
+        );
+
+        // DETRÁS
+        if (currentBackwardRange > 0f)
+        {
+            Vector3 backwardCenter =
+                player.position
+                - Vector3.forward *
+                (currentBackwardRange / 2f);
+
+            Gizmos.DrawWireCube(
+                backwardCenter,
+                new Vector3(3f, 3f, currentBackwardRange)
+            );
         }
     }
 }
