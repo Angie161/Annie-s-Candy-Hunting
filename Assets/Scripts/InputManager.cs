@@ -2,6 +2,18 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+
+    public void ResetPassage()
+    {
+        ProceduralSlot[] slots =
+            FindObjectsOfType<ProceduralSlot>();
+
+        foreach (var slot in slots)
+        {
+            slot.GenerateSprite();
+        }
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

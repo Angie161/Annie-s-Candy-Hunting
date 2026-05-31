@@ -20,11 +20,14 @@ public class ProceduralSlot : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("ProceduralSlot START: " + gameObject.name);
         GenerateSprite();
     }
 
     public void GenerateSprite()
     {
+        Debug.Log("Generating sprite for " + gameObject.name);
+        Debug.Log("Sprites in DB: " + database.sprites.Count);
         List<ProceduralSpriteData> compatibleSprites =
             new List<ProceduralSpriteData>();
 
@@ -90,5 +93,10 @@ public class ProceduralSlot : MonoBehaviour
                 gameObject.AddComponent<PolygonCollider2D>();
             }
         }
+    }
+
+    public void Regenerate()
+    {
+        GenerateSprite();
     }
 }

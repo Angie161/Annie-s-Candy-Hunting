@@ -31,6 +31,13 @@ public class GameManager : MonoBehaviour
 
         yield return StartCoroutine(FadeBlack(1));
 
+        ProceduralSlot[] slots = FindObjectsOfType<ProceduralSlot>();
+
+        foreach (ProceduralSlot slot in slots)
+        {
+            slot.GenerateSprite();
+        }
+
         cameraPivot.position = startPosition;
 
         yield return new WaitForSeconds(0.5f);
