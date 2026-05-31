@@ -1,23 +1,86 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    // ---------------- GLOBAL ACCESS ----------------
+    public static GameManager Instance;
+
+    // ---------------- FADE ----------------
+    [Header("Fade")]
     public Image blackScreen;
+
+    // ---------------- CAMERA ----------------
+    [Header("Camera")]
     public Transform cameraPivot;
-
     public Vector3 startPosition;
-
     public CameraMovement cameraMovement;
+
+    // ---------------- LOOP ----------------
     private bool isResetting = false;
+
+    // ---------------- TIMER ----------------
+    [Header("Timer")]
+    public float timeRemaining = 120f;
+    public TextMeshProUGUI timerText;
+
+    // ---------------- END GAME ----------------
+    [Header("End Game")]
+    public GameObject winScreen;
+    public bool gameEnded = false;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    void Start()
+    {
+        gameEnded = false;
+        isResetting = false;
+    }
 
     void Update()
     {
-        if (
-            !isResetting &&
-            cameraPivot.position.z >= cameraMovement.endPoint
-        )
+        if (gameEnded) return;
+
+        HandleTimer();
+        HandleLoopReset();
+    }
+
+    // ---------------- TIMER ----------------
+    void HandleTimer()
+    {
+        timeRemaining -= Time.deltaTime;
+
+        if (timeRemaining <= 0f)
+        {
+            timeRemaining = 0f;
+            StartCoroutine(EndGameSequence());
+            return;
+        }
+
+        UpdateTimerUI();
+    }
+
+    void UpdateTimerUI()
+    {
+        if (timerText == null) return;
+
+        int minutes = Mathf.FloorToInt(timeRemaining / 60f);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60f);
+
+        timerText.text = $"{minutes:00}:{seconds:00}";
+    }
+
+    // ---------------- LOOP ----------------
+    void HandleLoopReset()
+    {
+        if (isResetting) return;
+
+        if (cameraPivot.position.z >= cameraMovement.endPoint)
         {
             StartCoroutine(ResetLoop());
         }
@@ -49,6 +112,7 @@ public class GameManager : MonoBehaviour
         isResetting = false;
     }
 
+    // ---------------- FADE ----------------
     IEnumerator FadeBlack(float targetAlpha)
     {
         float duration = 0.5f;
@@ -73,5 +137,30 @@ public class GameManager : MonoBehaviour
         }
 
         blackScreen.color = targetColor;
+    }
+
+    // ---------------- END GAME ----------------
+    IEnumerator EndGameSequence()
+    {
+        if (gameEnded) yield break;
+
+        gameEnded = true;
+
+        cameraMovement.canMove = false;
+
+        Debug.Log("🔥 END GAME STARTED");
+
+        yield return StartCoroutine(FadeBlack(1));
+
+        if (winScreen != null)
+            winScreen.SetActive(true);
+
+        Debug.Log("🎉 GAME COMPLETED");
+    }
+
+    public void TriggerGameOver()
+    {
+        if (gameEnded) return;
+        StartCoroutine(EndGameSequence());
     }
 }
