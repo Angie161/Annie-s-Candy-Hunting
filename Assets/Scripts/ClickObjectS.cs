@@ -175,26 +175,35 @@ public class ClickObjectS : MonoBehaviour
 
     void RecoverToNormal()
     {
-        isStressActive = false;
-        currentState = ObjectState.Normal;
+    isStressActive = false;
+    anomalyProgress = 0f;
 
-        if (currentAnimation != null)
-            StopCoroutine(currentAnimation);
+    currentState = ObjectState.Normal;
 
-        currentAnimation = StartCoroutine(ReturnToGreen(1f));
+    if (currentAnimation != null)
+        StopCoroutine(currentAnimation);
+
+    currentAnimation = StartCoroutine(ReturnToGreen(1f));
     }
 
     void TriggerMistake()
+{
+    currentState = ObjectState.Mistake;
+
+    Sustometer sustometer = FindFirstObjectByType<Sustometer>();
+
+    if (sustometer != null)
     {
-        currentState = ObjectState.Mistake;
-
-        if (currentAnimation != null)
-            StopCoroutine(currentAnimation);
-
-        rend.color = Color.blue;
-
-        currentAnimation = StartCoroutine(ReturnToGreen(1f));
+        sustometer.AddMistake();
     }
+
+    if (currentAnimation != null)
+        StopCoroutine(currentAnimation);
+
+    rend.color = Color.blue;
+
+    currentAnimation = StartCoroutine(ReturnToGreen(1f));
+}
 
     // ---------------- COROUTINES ----------------
     IEnumerator ChangeColorSmoothly(Color targetColor, float duration)

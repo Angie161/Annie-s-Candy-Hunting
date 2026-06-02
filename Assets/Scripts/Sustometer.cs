@@ -1,27 +1,46 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Sustometer : MonoBehaviour
 {
+    [Header("Stress Settings")]
     public float stress = 0f;
     public float maxStress = 100f;
 
+    [Header("UI")]
     public TextMeshProUGUI stressText;
 
-    public float anomalyStressPerSecond = 0.02f;
-    public float mistakeStress = 1f;
+    [Header("Stress Gain")]
+    public float anomalyStressPerSecond = 2f;
+    public float mistakeStress = 0.5f;
 
     private ClickObjectS[] objects;
 
     void Start()
     {
-        objects = FindObjectsOfType<ClickObjectS>();
+        objects = FindObjectsByType<ClickObjectS>(FindObjectsSortMode.None);
+
+        Debug.Log("Objetos encontrados: " + objects.Length);
+
+        if (stressText == null)
+        {
+            Debug.LogError("No asignaste Stress Text en el Inspector.");
+        }
+
+        UpdateUI();
     }
 
     void Update()
     {
-        if (GameManager.Instance == null) return;
-        if (GameManager.Instance.gameEnded) return;
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager.Instance es NULL");
+            return;
+        }
+
+        if (GameManager.Instance.gameEnded)
+            return;
 
         UpdateStressFromAnomalies();
         ClampAndCheck();
@@ -32,7 +51,8 @@ public class Sustometer : MonoBehaviour
     {
         foreach (var obj in objects)
         {
-            if (obj == null) continue;
+            if (obj == null)
+                continue;
 
             if (obj.IsInAnomalyState() && obj.anomalyProgress >= 0.5f)
             {
@@ -43,7 +63,9 @@ public class Sustometer : MonoBehaviour
 
     public void AddMistake()
     {
-        stress += 0.5f;
+        stress += mistakeStress;
+
+        Debug.Log("Error cometido. Stress actual: " + stress);
     }
 
     void ClampAndCheck()
@@ -52,15 +74,25 @@ public class Sustometer : MonoBehaviour
 
         if (stress >= maxStress)
         {
-            GameManager.Instance.TriggerGameOver();
+            Debug.Log("GAME OVER ACTIVADO");
+
+            if (GameManager.Instance != null)
+            {
+               GameManager.Instance.TriggerGameOver();
+               SceneManager.LoadScene("GameOver");
+            }
         }
     }
 
     void UpdateUI()
     {
-        if (stressText == null) return;
+        if (stressText == null)
+            return;
 
         float percent = (stress / maxStress) * 100f;
-        stressText.text = $"Stress: {percent:0}%";
+
+        stressText.text =
+            $"Stress: {stress:F1}/{maxStress:F0}\n" +
+            $"{percent:F1}%";
     }
 }

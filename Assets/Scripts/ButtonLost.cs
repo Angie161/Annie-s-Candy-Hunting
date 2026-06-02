@@ -7,9 +7,14 @@ public class GameOver : MonoBehaviour
         // Cargar la escena del juego
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
-    public void ExitGame()
+    public void GoToMenu()
     {
-        // Salir del juego
-        Application.Quit();
+        // Ir al menú principal
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+    public void GoToCredits()
+    {
+        // Ir a la pantalla de créditos
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
 }
