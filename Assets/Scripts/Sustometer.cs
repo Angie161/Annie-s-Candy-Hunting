@@ -13,7 +13,7 @@ public class Sustometer : MonoBehaviour
 
     [Header("Stress Gain")]
     public float anomalyStressPerSecond = 2f;
-    public float mistakeStress = 0.5f;
+    public float mistakeStress = 1.0f;
 
     private ClickObjectS[] objects;
 
