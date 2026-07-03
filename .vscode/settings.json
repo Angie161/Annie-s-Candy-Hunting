@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "My project.slnx",
+    "dotnet.defaultSolution": "Annie-s-Candy-Hunting.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }

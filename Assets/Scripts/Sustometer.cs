@@ -54,7 +54,7 @@ public class Sustometer : MonoBehaviour
             if (obj == null)
                 continue;
 
-            if (obj.IsInAnomalyState() && obj.anomalyProgress >= 0.5f)
+            if (obj.IsInAnomalyState())
             {
                 stress += anomalyStressPerSecond * Time.deltaTime;
             }
@@ -95,4 +95,4 @@ public class Sustometer : MonoBehaviour
             $"Stress: {stress:F1}/{maxStress:F0}\n" +
             $"{percent:F1}%";
     }
-}
+} 
