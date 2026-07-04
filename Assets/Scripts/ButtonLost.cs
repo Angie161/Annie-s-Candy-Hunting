@@ -17,4 +17,10 @@ public class GameOver : MonoBehaviour
         // Ir a la pantalla de créditos
         UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
     }
+
+    public void GoToShop()
+    {
+        // Ir a la tienda
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Shop");
+    }
 }
