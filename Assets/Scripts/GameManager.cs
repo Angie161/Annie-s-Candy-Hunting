@@ -21,11 +21,6 @@ public class GameManager : MonoBehaviour
     // ---------------- LOOP ----------------
     private bool isResetting = false;
 
-    // ---------------- TIMER ----------------
-    /*[Header("Timer")]
-    public float timeRemaining = 120f;
-    public TextMeshProUGUI timerText;*/
-
     // ---------------- DIFFICULTY ----------------
     [Header("Difficulty")]
     public int maxActiveAnomalies = 3;
@@ -38,6 +33,10 @@ public class GameManager : MonoBehaviour
     public int runCandies = 0;
     public int totalCandies = 0;
     public TextMeshProUGUI candyText;
+
+    private float candyTimer = 0f;
+    public float candyInterval = 2f;
+    public int candiesPerTick = 1;
 
     // ---------------- END GAME ----------------
     [Header("End Game")]
@@ -57,11 +56,35 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (gameEnded) return;
+        if (!gameEnded)
+        {
+            HandleCandyGeneration();
+        }
 
-        //HandleTimer();
+        UpdateCandyUI();
+
         HandleLoopReset();
         HandleDifficulty();
+    }
+
+    void UpdateCandyUI()
+    {
+        if (candyText == null) return;
+
+        candyText.text = $"{runCandies}";
+    }
+
+    void HandleCandyGeneration()
+    {
+        if (gameEnded) return;
+
+        candyTimer += Time.deltaTime;
+
+        if (candyTimer >= candyInterval)
+        {
+            candyTimer = 0f;
+            runCandies += candiesPerTick;
+        }
     }
 
     // ---------------- DIFFICULTY ----------------
@@ -86,31 +109,6 @@ public class GameManager : MonoBehaviour
     {
         runCandies += amount;
     }
-
-    // ---------------- TIMER ----------------
-    /*void HandleTimer()
-    {
-        timeRemaining -= Time.deltaTime;
-
-        if (timeRemaining <= 0f)
-        {
-            timeRemaining = 0f;
-            StartCoroutine(EndGameSequence());
-            return;
-        }
-
-        UpdateTimerUI();
-    }*/
-
-    /*void UpdateTimerUI()
-    {
-        if (timerText == null) return;
-
-        int minutes = Mathf.FloorToInt(timeRemaining / 60f);
-        int seconds = Mathf.FloorToInt(timeRemaining % 60f);
-
-        timerText.text = $"{minutes:00}:{seconds:00}";
-    }*/
 
     // ---------------- LOOP ----------------
     void HandleLoopReset()
@@ -190,7 +188,10 @@ public class GameManager : MonoBehaviour
         yield return StartCoroutine(FadeBlack(1));
 
         if (winScreen != null)
+        {
+            totalCandies += runCandies;
             winScreen.SetActive(true);
+        }
 
         Debug.Log("🎉 GAME COMPLETED");
     }
@@ -199,5 +200,11 @@ public class GameManager : MonoBehaviour
     {
         if (gameEnded) return;
         StartCoroutine(EndGameSequence());
+    }
+
+    public void ResetRun()
+    {
+        runCandies = 0;
+        candyTimer = 0f;
     }
 }
