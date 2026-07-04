@@ -39,8 +39,11 @@ public class ClickObjectS : MonoBehaviour
 
     public ObjectPlacementType placementType;
 
+    // ---------------- RANGES ----------------
     private float wallForwardRange;
     private float wallBackwardRange;
+
+    private float flatWallForwardRange;
 
     private float floorForwardRange;
     private float floorZOffset;
@@ -51,6 +54,7 @@ public class ClickObjectS : MonoBehaviour
     void Awake(){
         wallForwardRange = 20f;
         wallBackwardRange = 5f;
+        flatWallForwardRange = 15f;
 
         floorForwardRange = 28f;
         floorZOffset = -7f;
@@ -103,9 +107,22 @@ public class ClickObjectS : MonoBehaviour
                 break;
 
             case ObjectPlacementType.Wall:
-                currentForwardRange = wallForwardRange;
-                currentBackwardRange = wallBackwardRange;
+            {
+                ProceduralSpriteData data = slot.currentData;
+
+                if (data != null && data.visualType == VisualType.FlatWall)
+                {
+                    currentForwardRange = flatWallForwardRange;
+                    currentBackwardRange = wallBackwardRange;
+                }
+                else
+                {
+                    currentForwardRange = wallForwardRange;
+                    currentBackwardRange = wallBackwardRange;
+                }
+
                 break;
+            }
         }
 
         float relativeZ =
@@ -142,12 +159,20 @@ public class ClickObjectS : MonoBehaviour
             if (currentState == ObjectState.Normal &&
                 currentTransition == TransitionState.None)
             {
-                int randomChoice = Random.Range(0, 2);
+                int randomChoice = Random.Range(0, 100);
 
-                if (randomChoice == 0)
+                bool canSpawnAnomaly =
+                CountActiveAnomalies() <
+                GameManager.Instance.maxActiveAnomalies;
+
+                if (randomChoice < 40 && canSpawnAnomaly)
+                {
                     StartAnomaly();
+                }
                 else
+                {
                     StartDistraction();
+                }
             }
         }
     }
@@ -220,7 +245,7 @@ public class ClickObjectS : MonoBehaviour
         currentState = ObjectState.Normal;
 
         if (spriteAnimator != null)
-            spriteAnimator.RecoverToFirstFrame();
+            spriteAnimator.RecoverToFirstFrame(3f);
 
         StartCoroutine(ResetTransition());
     }
@@ -248,7 +273,7 @@ public class ClickObjectS : MonoBehaviour
         SpawnGhost();
 
         if (spriteAnimator != null)
-            spriteAnimator.RecoverToFirstFrame();
+            spriteAnimator.RecoverToFirstFrame(3f);
         
         StartCoroutine(ResetTransition());
     }
@@ -300,4 +325,60 @@ public class ClickObjectS : MonoBehaviour
         return currentState == ObjectState.Anomaly;
     }
 
+    int CountActiveAnomalies()
+    {
+        ClickObjectS[] objects =
+            FindObjectsByType<ClickObjectS>(
+                FindObjectsSortMode.None
+            );
+
+        int count = 0;
+
+        foreach (var obj in objects)
+        {
+            if (obj.currentState ==
+                ObjectState.Anomaly)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+/*
+void OnDrawGizmosSelected()
+{
+    if (placementType != ObjectPlacementType.Wall)
+        return;
+
+    GameObject p = GameObject.FindGameObjectWithTag("Player");
+    if (p == null) return;
+
+    Transform player = p.transform;
+
+    float forward = wallForwardRange;
+    float backward = wallBackwardRange;
+
+    float zOffset = 0f; // los walls no usan offset en tu lógica actual
+
+    Vector3 centerForward =
+        player.position + new Vector3(0, 0, forward * 0.5f);
+
+    Vector3 centerBackward =
+        player.position - new Vector3(0, 0, backward * 0.5f);
+
+    Gizmos.color = Color.cyan;
+
+    // zona adelante
+    Gizmos.DrawWireCube(centerForward, new Vector3(10f, 10f, forward));
+
+    // zona atrás
+    Gizmos.DrawWireCube(centerBackward, new Vector3(10f, 10f, backward));
+
+    // player reference
+    Gizmos.color = Color.red;
+    Gizmos.DrawSphere(player.position, 0.15f);
+}
+*/
 }

@@ -14850,6 +14850,8 @@ MonoBehaviour:
   cameraMovement: {fileID: 1248873661}
   timeRemaining: 120
   timerText: {fileID: 0}
+  maxActiveAnomalies: 2
+  difficultyIncreaseInterval: 30
   winScreen: {fileID: 0}
   gameEnded: 0
 --- !u!4 &1996074302

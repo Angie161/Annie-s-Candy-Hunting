@@ -22,9 +22,22 @@ public class GameManager : MonoBehaviour
     private bool isResetting = false;
 
     // ---------------- TIMER ----------------
-    [Header("Timer")]
+    /*[Header("Timer")]
     public float timeRemaining = 120f;
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerText;*/
+
+    // ---------------- DIFFICULTY ----------------
+    [Header("Difficulty")]
+    public int maxActiveAnomalies = 3;
+    public float difficultyIncreaseInterval = 30f;
+
+    private float difficultyTimer;
+
+    // ---------------- CANDY SYSTEM ----------------
+    [Header("Candy System")]
+    public int runCandies = 0;
+    public int totalCandies = 0;
+    public TextMeshProUGUI candyText;
 
     // ---------------- END GAME ----------------
     [Header("End Game")]
@@ -46,12 +59,36 @@ public class GameManager : MonoBehaviour
     {
         if (gameEnded) return;
 
-        HandleTimer();
+        //HandleTimer();
         HandleLoopReset();
+        HandleDifficulty();
+    }
+
+    // ---------------- DIFFICULTY ----------------
+    void HandleDifficulty()
+    {
+        difficultyTimer += Time.deltaTime;
+
+        if (difficultyTimer >= difficultyIncreaseInterval)
+        {
+            difficultyTimer = 0f;
+            maxActiveAnomalies++;
+
+            Debug.Log(
+                "Máximo de anomalías: " +
+                maxActiveAnomalies
+            );
+        }
+    }
+
+    // ---------------- CANDY SYSTEM ----------------
+    public void AddCandies(int amount)
+    {
+        runCandies += amount;
     }
 
     // ---------------- TIMER ----------------
-    void HandleTimer()
+    /*void HandleTimer()
     {
         timeRemaining -= Time.deltaTime;
 
@@ -63,9 +100,9 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateTimerUI();
-    }
+    }*/
 
-    void UpdateTimerUI()
+    /*void UpdateTimerUI()
     {
         if (timerText == null) return;
 
@@ -73,7 +110,7 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(timeRemaining % 60f);
 
         timerText.text = $"{minutes:00}:{seconds:00}";
-    }
+    }*/
 
     // ---------------- LOOP ----------------
     void HandleLoopReset()

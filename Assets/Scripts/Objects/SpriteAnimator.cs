@@ -109,7 +109,7 @@ public class SpriteAnimator : MonoBehaviour
         }
     }
 
-    public void RecoverToFirstFrame()
+    public void RecoverToFirstFrame(float speedMultiplier = 1f)
     {
         if (currentFrames == null)
             return;
@@ -117,10 +117,13 @@ public class SpriteAnimator : MonoBehaviour
         if (currentAnimation != null)
             StopCoroutine(currentAnimation);
 
-        currentAnimation = StartCoroutine(RecoverRoutine());
+        currentAnimation =
+            StartCoroutine(
+                RecoverRoutine(speedMultiplier)
+            );
     }
 
-    IEnumerator RecoverRoutine()
+    IEnumerator RecoverRoutine(float speedMultiplier)
     {
         while (currentFrame > 0)
         {
@@ -128,7 +131,7 @@ public class SpriteAnimator : MonoBehaviour
             rend.sprite = currentFrames[currentFrame];
             UpdateCollider();
 
-            yield return new WaitForSeconds(currentFrameRate);
+            yield return new WaitForSeconds(currentFrameRate/speedMultiplier);
         }
         if (originalSprite != null)
         {
