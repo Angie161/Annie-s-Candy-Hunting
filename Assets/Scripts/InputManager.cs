@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -18,6 +21,8 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (IsPointerOverButton())
+                return;
             ClickObjectS clickedObject = null;
 
             // RAY 3D (BoxCollider)
@@ -57,5 +62,26 @@ public class InputManager : MonoBehaviour
                 clickedObject.OnClicked();
             }
         }
+    }
+
+    bool IsPointerOverButton()
+    {
+        PointerEventData data =
+            new PointerEventData(EventSystem.current);
+
+        data.position = Input.mousePosition;
+
+        List<RaycastResult> results =
+            new List<RaycastResult>();
+
+        EventSystem.current.RaycastAll(data, results);
+
+        foreach (RaycastResult result in results)
+        {
+            if (result.gameObject.GetComponent<Button>() != null)
+                return true;
+        }
+
+        return false;
     }
 }
