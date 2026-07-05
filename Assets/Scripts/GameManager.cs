@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -173,8 +174,20 @@ public class GameManager : MonoBehaviour
         if (fadeController != null)
             yield return StartCoroutine(fadeController.Fade(1));
 
+        bool isNewRecord =
+            runCandies > SaveData.Data.highScore;
+
+        SaveData.LastRunCandies = runCandies;
+        SaveData.LastRunWasNewRecord = isNewRecord;
+
+        if (isNewRecord)
+        {
+            SaveData.Data.highScore = runCandies;
+        }
+
         SaveData.Data.totalCandies += runCandies;
         SaveSystem.Save(SaveData.Data);
+        SceneManager.LoadScene("GameOver");
 
         Debug.Log("🎉 GAME COMPLETED");
     }

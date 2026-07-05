@@ -6,11 +6,14 @@ public class HUDController : MonoBehaviour
     public TextMeshProUGUI candyText;
 
     void Update()
+{
+    if (GameManager.Instance == null)
     {
-        if (GameManager.Instance == null)
-            return;
-
-        candyText.text =
-            GameManager.Instance.runCandies.ToString();
+        candyText.text = "0";
+        return;
     }
+
+    candyText.text =
+        GameManager.Instance.runCandies.ToString();
+}
 }

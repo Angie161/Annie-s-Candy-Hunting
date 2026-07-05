@@ -92,7 +92,6 @@ public class Sustometer : MonoBehaviour
             if (GameManager.Instance != null)
             {
                GameManager.Instance.TriggerGameOver();
-               SceneManager.LoadScene("GameOver");
             }
         }
     }
