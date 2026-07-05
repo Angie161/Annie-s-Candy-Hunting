@@ -8,12 +8,12 @@ public class GameOverUI : MonoBehaviour
 
     void Start()
     {
+        GameManager gm = GameManager.Instance;
+
         runCandiesText.text =
-            SaveData.LastRunCandies.ToString();
+            gm.runCandies.ToString();
 
         walletText.text =
-            SaveData.TotalCandies.ToString();
+            SaveData.Data.totalCandies.ToString();
     }
-
-    
 }

@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        SaveData.Data = SaveSystem.Load();
+
         gameEnded = false;
         isResetting = false;
 
@@ -173,8 +175,8 @@ public class GameManager : MonoBehaviour
         if (fadeController != null)
             yield return StartCoroutine(fadeController.Fade(1));
 
-        SaveData.LastRunCandies = runCandies;
-        SaveData.TotalCandies += runCandies;
+        SaveData.Data.totalCandies += runCandies;
+        SaveSystem.Save(SaveData.Data);
 
         Debug.Log("🎉 GAME COMPLETED");
     }
