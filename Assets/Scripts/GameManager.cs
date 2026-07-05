@@ -47,8 +47,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        SaveData.Data = SaveSystem.Load();
-
         gameEnded = false;
         isResetting = false;
 
