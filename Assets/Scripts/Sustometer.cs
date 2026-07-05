@@ -8,6 +8,10 @@ public class Sustometer : MonoBehaviour
     [Header("UI")]
     public Slider stressBar;
     public Image fillImage;
+
+    private Color lowStressColor;
+    private Color mediumStressColor;
+    private Color highStressColor;
     
     [Header("Stress Settings")]
     public float stress = 0f;
@@ -25,6 +29,10 @@ public class Sustometer : MonoBehaviour
     void Start()
     {
         objects = FindObjectsByType<ClickObjectS>(FindObjectsSortMode.None);
+
+        ColorUtility.TryParseHtmlString("#5E9C76", out lowStressColor);
+        ColorUtility.TryParseHtmlString("#D8A84C", out mediumStressColor);
+        ColorUtility.TryParseHtmlString("#A94442", out highStressColor);
 
         //Debug.Log("Objetos encontrados: " + objects.Length);
 
@@ -104,8 +112,8 @@ public class Sustometer : MonoBehaviour
             {
                 fillImage.color =
                     Color.Lerp(
-                        Color.green,
-                        Color.yellow,
+                        lowStressColor,
+                        mediumStressColor,
                         t * 2f
                     );
             }
@@ -113,8 +121,8 @@ public class Sustometer : MonoBehaviour
             {
                 fillImage.color =
                     Color.Lerp(
-                        Color.yellow,
-                        Color.red,
+                        mediumStressColor,
+                        highStressColor,
                         (t - 0.5f) * 2f
                     );
             }
