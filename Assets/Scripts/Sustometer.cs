@@ -1,15 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Sustometer : MonoBehaviour
 {
+    [Header("UI")]
+    public Slider stressBar;
+    public Image fillImage;
+    
     [Header("Stress Settings")]
     public float stress = 0f;
     public float maxStress = 100f;
 
-    [Header("UI")]
-    public TextMeshProUGUI stressText;
+    //[Header("UI")]
+    //public TextMeshProUGUI stressText;
 
     [Header("Stress Gain")]
     public float anomalyStressPerSecond = 2f;
@@ -23,10 +28,10 @@ public class Sustometer : MonoBehaviour
 
         //Debug.Log("Objetos encontrados: " + objects.Length);
 
-        if (stressText == null)
+        /*if (stressText == null)
         {
             Debug.LogError("No asignaste Stress Text en el Inspector.");
-        }
+        }*/
 
         UpdateUI();
     }
@@ -86,13 +91,42 @@ public class Sustometer : MonoBehaviour
 
     void UpdateUI()
     {
-        if (stressText == null)
+        if (stressBar != null)
+        {
+            stressBar.value = stress;
+        }
+
+        if (fillImage != null)
+        {
+            float t = stress / maxStress;
+
+            if (t < 0.5f)
+            {
+                fillImage.color =
+                    Color.Lerp(
+                        Color.green,
+                        Color.yellow,
+                        t * 2f
+                    );
+            }
+            else
+            {
+                fillImage.color =
+                    Color.Lerp(
+                        Color.yellow,
+                        Color.red,
+                        (t - 0.5f) * 2f
+                    );
+            }
+        }
+            /*if (stressText == null)
             return;
 
         float percent = (stress / maxStress) * 100f;
 
         stressText.text =
             $"Stress: {stress:F1}/{maxStress:F0}\n" +
-            $"{percent:F1}%";
+            $"{percent:F1}%";*/
+
     }
 } 
