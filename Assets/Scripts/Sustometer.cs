@@ -21,7 +21,7 @@ public class Sustometer : MonoBehaviour
     {
         objects = FindObjectsByType<ClickObjectS>(FindObjectsSortMode.None);
 
-        Debug.Log("Objetos encontrados: " + objects.Length);
+        //Debug.Log("Objetos encontrados: " + objects.Length);
 
         if (stressText == null)
         {
@@ -65,7 +65,7 @@ public class Sustometer : MonoBehaviour
     {
         stress += mistakeStress;
 
-        Debug.Log("Error cometido. Stress actual: " + stress);
+        //Debug.Log("Error cometido. Stress actual: " + stress);
     }
 
     void ClampAndCheck()

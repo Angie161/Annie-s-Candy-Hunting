@@ -8,10 +8,6 @@ public class GameManager : MonoBehaviour
     // ---------------- GLOBAL ACCESS ----------------
     public static GameManager Instance;
 
-    // ---------------- FADE ----------------
-    [Header("Fade")]
-    public Image blackScreen;
-
     // ---------------- CAMERA ----------------
     [Header("Camera")]
     public Transform cameraPivot;
@@ -28,11 +24,12 @@ public class GameManager : MonoBehaviour
 
     private float difficultyTimer;
 
+    // ---------------- FADE ----------------
+    private FadeController fadeController;
+
     // ---------------- CANDY SYSTEM ----------------
     [Header("Candy System")]
     public int runCandies = 0;
-    public int totalCandies = 0;
-    public TextMeshProUGUI candyText;
 
     private float candyTimer = 0f;
     public float candyInterval = 2f;
@@ -52,26 +49,22 @@ public class GameManager : MonoBehaviour
     {
         gameEnded = false;
         isResetting = false;
+
+        ResetRun();
     }
 
     void Update()
     {
-        if (!gameEnded)
-        {
-            HandleCandyGeneration();
-        }
+        if (gameEnded)
+            return;
 
-        UpdateCandyUI();
+        HandleCandyGeneration();
+        HandleDifficulty();
+
+        if (cameraPivot == null)
+            return;
 
         HandleLoopReset();
-        HandleDifficulty();
-    }
-
-    void UpdateCandyUI()
-    {
-        if (candyText == null) return;
-
-        candyText.text = $"{runCandies}";
     }
 
     void HandleCandyGeneration()
@@ -84,6 +77,15 @@ public class GameManager : MonoBehaviour
         {
             candyTimer = 0f;
             runCandies += candiesPerTick;
+            //Debug.Log("Candies: " + runCandies);
+        }
+    }
+    // ---------------- FADE ----------------
+    void FindFadeController()
+    {
+        if (fadeController == null)
+        {
+            fadeController = FindFirstObjectByType<FadeController>();
         }
     }
 
@@ -97,10 +99,10 @@ public class GameManager : MonoBehaviour
             difficultyTimer = 0f;
             maxActiveAnomalies++;
 
-            Debug.Log(
-                "Máximo de anomalías: " +
-                maxActiveAnomalies
-            );
+            //Debug.Log(
+            //    "Máximo de anomalías: " +
+            //    maxActiveAnomalies
+            //);
         }
     }
 
@@ -113,7 +115,9 @@ public class GameManager : MonoBehaviour
     // ---------------- LOOP ----------------
     void HandleLoopReset()
     {
+        if (gameEnded) return;
         if (isResetting) return;
+        if (cameraPivot == null || cameraMovement == null) return;
 
         if (cameraPivot.position.z >= cameraMovement.endPoint)
         {
@@ -127,7 +131,10 @@ public class GameManager : MonoBehaviour
 
         cameraMovement.canMove = false;
 
-        yield return StartCoroutine(FadeBlack(1));
+        FindFadeController();
+
+        if (fadeController != null)
+            yield return StartCoroutine(fadeController.Fade(1));
 
         ProceduralSlot[] slots = FindObjectsOfType<ProceduralSlot>();
 
@@ -140,43 +147,19 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        yield return StartCoroutine(FadeBlack(0));
+        FindFadeController();
 
+        if (fadeController != null)
+            yield return StartCoroutine(fadeController.Fade(0));
         cameraMovement.canMove = true;
 
         isResetting = false;
     }
 
-    // ---------------- FADE ----------------
-    IEnumerator FadeBlack(float targetAlpha)
-    {
-        float duration = 0.5f;
-        float elapsed = 0f;
-
-        Color startColor = blackScreen.color;
-        Color targetColor = blackScreen.color;
-
-        targetColor.a = targetAlpha;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-
-            blackScreen.color = Color.Lerp(
-                startColor,
-                targetColor,
-                elapsed / duration
-            );
-
-            yield return null;
-        }
-
-        blackScreen.color = targetColor;
-    }
-
     // ---------------- END GAME ----------------
     IEnumerator EndGameSequence()
     {
+        Debug.Log("ENDGAME COROUTINE EMPEZO");
         if (gameEnded) yield break;
 
         gameEnded = true;
@@ -185,13 +168,13 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("🔥 END GAME STARTED");
 
-        yield return StartCoroutine(FadeBlack(1));
+        FindFadeController();
 
-        if (winScreen != null)
-        {
-            totalCandies += runCandies;
-            winScreen.SetActive(true);
-        }
+        if (fadeController != null)
+            yield return StartCoroutine(fadeController.Fade(1));
+
+        SaveData.LastRunCandies = runCandies;
+        SaveData.TotalCandies += runCandies;
 
         Debug.Log("🎉 GAME COMPLETED");
     }

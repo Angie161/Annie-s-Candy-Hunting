@@ -22,14 +22,14 @@ public class ProceduralSlot : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("ProceduralSlot START: " + gameObject.name);
+        //Debug.Log("ProceduralSlot START: " + gameObject.name);
         GenerateSprite();
     }
 
     public void GenerateSprite()
     {
-        Debug.Log(" Generando sprites para " + gameObject.name);
-        Debug.Log("Sprites en la DB: " + database.sprites.Count);
+        //Debug.Log(" Generando sprites para " + gameObject.name);
+        //Debug.Log("Sprites en la DB: " + database.sprites.Count);
         List<ProceduralSpriteData> compatibleSprites =
             new List<ProceduralSpriteData>();
 
@@ -62,11 +62,11 @@ public class ProceduralSlot : MonoBehaviour
             }
         }
 
-        Debug.Log(
-            gameObject.name +
-            " compatibles: " +
-            compatibleSprites.Count
-        );
+        //Debug.Log(
+        //    gameObject.name +
+        //    " compatibles: " +
+        //    compatibleSprites.Count
+        //);
 
         if (compatibleSprites.Count > 0)
         {
@@ -79,11 +79,11 @@ public class ProceduralSlot : MonoBehaviour
                     )
                 ];
 
-            Debug.Log(
-                gameObject.name +
-                " eligió: " +
-                chosen.sprite.name
-            );
+            //Debug.Log(
+            //    gameObject.name +
+            //    " eligió: " +
+            //    chosen.sprite.name
+            //);
 
             currentData = chosen;
             targetRenderer.sprite = chosen.sprite;
