@@ -28,10 +28,13 @@ public class GameManager : MonoBehaviour
     // ---------------- FADE ----------------
     private FadeController fadeController;
 
+<<<<<<< Updated upstream
     // ---------------- AUDIO----------------
     [Header("Audio")]
     public AudioClip gameOverScream;
 
+=======
+>>>>>>> Stashed changes
     // ---------------- CANDY SYSTEM ----------------
     [Header("Candy System")]
     public int runCandies = 0;
