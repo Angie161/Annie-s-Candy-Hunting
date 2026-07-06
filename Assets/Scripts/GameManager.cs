@@ -197,7 +197,9 @@ public class GameManager : MonoBehaviour
         FindFadeController();
 
         if (fadeController != null)
-            yield return StartCoroutine(fadeController.Fade(1));
+        {
+            fadeController.Fade(1); // NO esperar
+        }
 
         bool isNewRecord =
             runCandies > SaveData.Data.highScore;

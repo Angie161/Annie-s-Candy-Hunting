@@ -2,12 +2,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Sustometer : MonoBehaviour
 {
     [Header("UI")]
     public Slider stressBar;
     public Image fillImage;
+
+    [Header("Border")]
+    public Image borderImage;
+
+    private float borderTargetAlpha = 0f;
+    private float borderCurrentAlpha = 0f;
+    private float mistakeFlashTimer = 0f;
 
     private Color lowStressColor;
     private Color mediumStressColor;
@@ -32,7 +40,7 @@ public class Sustometer : MonoBehaviour
     void Start()
     {
         objects = FindObjectsByType<ClickObjectS>(FindObjectsSortMode.None);
-
+        
         ColorUtility.TryParseHtmlString("#5E9C76", out lowStressColor);
         ColorUtility.TryParseHtmlString("#D8A84C", out mediumStressColor);
         ColorUtility.TryParseHtmlString("#A94442", out highStressColor);
@@ -60,6 +68,8 @@ public class Sustometer : MonoBehaviour
 
         UpdateStressFromAnomalies();
         ClampAndCheck();
+        UpdateBorder();
+        UpdateMistakeFlash();
         UpdateUI();
     }
 
@@ -77,11 +87,59 @@ public class Sustometer : MonoBehaviour
         }
     }
 
+    void UpdateBorder()
+    {
+        if (borderImage == null)
+            return;
+        
+        if (mistakeFlashTimer > 0f)
+        return;
+
+        bool danger =
+            System.Array.Exists(objects, obj =>
+                obj != null && obj.IsInAnomalyState()
+            );
+
+        borderTargetAlpha = danger ? 0.6f : 0f;
+
+        borderCurrentAlpha =
+            Mathf.Lerp(
+                borderCurrentAlpha,
+                borderTargetAlpha,
+                Time.deltaTime * 4f
+            );
+
+        // base color (normal state)
+        ColorUtility.TryParseHtmlString("#780A0A", out Color baseColor);
+        baseColor.a = borderCurrentAlpha;
+
+        // 🔴 si hay flash de mistake, lo sobrescribimos SOLO aquí
+        if (mistakeFlashTimer > 0f)
+            return;
+
+        borderImage.color = baseColor;
+    }
+
     public void AddMistake()
     {
         stress += mistakeStress;
+        mistakeFlashTimer = 0.2f;
+    }
 
-        //Debug.Log("Error cometido. Stress actual: " + stress);
+    void UpdateMistakeFlash()
+    {
+        if (mistakeFlashTimer > 0f)
+        {
+            mistakeFlashTimer -= Time.deltaTime;
+
+            float t = mistakeFlashTimer / 0.2f;
+
+            ColorUtility.TryParseHtmlString("#780A0A", out Color c);
+
+            c.a = Mathf.Lerp(0.9f, 0f, 1f - t);
+
+            borderImage.color = c;
+        }
     }
 
     void ClampAndCheck()
