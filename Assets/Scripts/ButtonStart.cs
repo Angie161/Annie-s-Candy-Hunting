@@ -19,4 +19,9 @@ public class MainMenu : MonoBehaviour
         // Salir del juego
         Application.Quit();
     }
+
+    public void GoToShop()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Shop");
+    }
 }
