@@ -67,10 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-<<<<<<< Updated upstream
     "dotnet.defaultSolution": "Annie-s-Candy-Hunting.slnx",
-=======
-    "dotnet.defaultSolution": "Annie.slnx",
->>>>>>> Stashed changes
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
