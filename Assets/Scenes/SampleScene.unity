@@ -2092,10 +2092,7 @@ GameObject:
   - component: {fileID: 193143943}
   - component: {fileID: 193143944}
   - component: {fileID: 193143945}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 193143946}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Annie
   m_TagString: Player
@@ -2199,8 +2196,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
-<<<<<<< Updated upstream
-=======
 --- !u!114 &193143946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2213,7 +2208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd75c849dc49c1441900eaa08eb77374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSkinLoader
->>>>>>> Stashed changes
 --- !u!1 &209313830
 GameObject:
   m_ObjectHideFlags: 0
@@ -10425,10 +10419,7 @@ MonoBehaviour:
   fillImage: {fileID: 773092028}
   stress: 0
   maxStress: 100
-<<<<<<< Updated upstream
   breathingAudio: {fileID: 1517247598}
-=======
->>>>>>> Stashed changes
   anomalyStressPerSecond: 2
   mistakeStress: 0.5
 --- !u!4 &1517247597
@@ -15917,10 +15908,7 @@ MonoBehaviour:
   cameraMovement: {fileID: 1248873661}
   maxActiveAnomalies: 2
   difficultyIncreaseInterval: 30
-<<<<<<< Updated upstream
   gameOverScream: {fileID: 8300000, guid: d88164531e045c04192342aa7fdb987e, type: 3}
-=======
->>>>>>> Stashed changes
   runCandies: 0
   candyInterval: 4
   candiesPerTick: 1

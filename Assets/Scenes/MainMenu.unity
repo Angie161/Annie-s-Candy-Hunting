@@ -1462,7 +1462,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885763736}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
 --- !u!1 &1983123426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,8 +1506,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &2067538985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,7 +1640,4 @@ SceneRoots:
   - {fileID: 179384042}
   - {fileID: 1767621281}
   - {fileID: 149329576}
-<<<<<<< Updated upstream
   - {fileID: 1983123428}
-=======
->>>>>>> Stashed changes
