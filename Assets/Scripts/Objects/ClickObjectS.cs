@@ -4,6 +4,7 @@ using System.Collections;
 public class ClickObjectS : MonoBehaviour
 {
     private SpriteAnimator spriteAnimator;
+    private SpriteAnimationData currentAnimation;
     private ProceduralSlot slot;
 
     public GameObject ghostPrefab;
@@ -39,6 +40,9 @@ public class ClickObjectS : MonoBehaviour
 
     public ObjectPlacementType placementType;
 
+    //------------------- AUDIO ----------------
+    private AudioSource audioSource;
+
     // ---------------- RANGES ----------------
     private float wallForwardRange;
     private float wallBackwardRange;
@@ -68,6 +72,12 @@ public class ClickObjectS : MonoBehaviour
 
         spriteAnimator = GetComponent<SpriteAnimator>();
         slot = GetComponent<ProceduralSlot>();
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
 
         StartCoroutine(GenerateStateLoop());
     }
@@ -189,17 +199,24 @@ public class ClickObjectS : MonoBehaviour
         
         currentState = ObjectState.Anomaly;
 
-        SpriteAnimationData anim =
+        currentAnimation =
             slot.currentData.anomalies[
                 Random.Range(0, slot.currentData.anomalies.Count)
             ];
 
         spriteAnimator.Play(
-            anim.frames,
-            anim.frameRate,
-            anim.loop,
-            anim.pingPong
+            currentAnimation.frames,
+            currentAnimation.frameRate,
+            currentAnimation.loop,
+            currentAnimation.pingPong
         );
+
+        if (currentAnimation.soundEffect != null)
+        {
+            audioSource.PlayOneShot(
+                currentAnimation.soundEffect
+            );
+        }
     }
 
     void StartDistraction()

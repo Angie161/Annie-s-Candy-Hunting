@@ -163,6 +163,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 8300000, guid: d8ef2b2d6f1b67648bbbdf3064cba7f4, type: 3}
     - animationName: Mano
       frames:
       - {fileID: 21300000, guid: cc005a42d1bab4c438655368fa0cbd49, type: 3}
@@ -173,6 +174,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 8300000, guid: 1e752de07b0cbce4aae79532674f2e04, type: 3}
     - animationName: Pulpo
       frames:
       - {fileID: 21300000, guid: c506f055b04e7a44687c412097b10611, type: 3}
@@ -184,6 +186,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 8300000, guid: 96d64f87f351f1248a53e8d1fb18cf96, type: 3}
     distractions:
     - animationName: Apertura
       frames:
@@ -193,6 +196,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 1
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 6731251d76475624eb3a5b43b1b9ad4f, type: 3}
     visualType: 2
     slotSize: 0
@@ -213,6 +217,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.1
+      soundEffect: {fileID: 8300000, guid: c01b6bf24737d9e429104070c3013dc3, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -222,6 +227,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.3
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: c6bb8cca87db899469c27f9f7449584a, type: 3}
     visualType: 2
     slotSize: 0
@@ -241,6 +247,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 8300000, guid: ad0c3debe608f5944a0b3a0fbfa5a4ad, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -250,6 +257,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.4
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: cc34518fcbdf166488edac3b989bc2f5, type: 3}
     visualType: 0
     slotSize: 1
@@ -266,6 +274,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.1
+      soundEffect: {fileID: 8300000, guid: 01e5149bc980a8449927e38d3c310d63, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -275,6 +284,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.4
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 74622f9ee5435d147958b5ecaf23a287, type: 3}
     visualType: 0
     slotSize: 0
@@ -294,6 +304,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.3
+      soundEffect: {fileID: 8300000, guid: 34953e0ca91a9f8428971a7490c4c1cd, type: 3}
     - animationName: turbio
       frames:
       - {fileID: 21300000, guid: 16077773862a04d4ca35e2cd28b58f68, type: 3}
@@ -304,6 +315,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.2
+      soundEffect: {fileID: 8300000, guid: 34953e0ca91a9f8428971a7490c4c1cd, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -313,6 +325,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.3
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 4ac44e8964c727c4e98549542d0e3137, type: 3}
     visualType: 1
     slotSize: 1
@@ -334,6 +347,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.05
+      soundEffect: {fileID: 8300000, guid: 3c8e6298f6604684bb33e55f2862b51c, type: 3}
     - animationName: "se\xF1or"
       frames:
       - {fileID: 21300000, guid: 40315bb568df08249ad1f8d51e5945bf, type: 3}
@@ -347,6 +361,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.2
+      soundEffect: {fileID: 8300000, guid: 4d41ace4bedb7274b90f8d4da14b1121, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -356,6 +371,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.35
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: c369c7b55b9512c4ea59f5b6b0fc1de6, type: 3}
     visualType: 1
     slotSize: 1
@@ -373,6 +389,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.1
+      soundEffect: {fileID: 8300000, guid: 3931d9d480871604791fd56eca2b7ddf, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -382,6 +399,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.4
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 7a8ddd773ce5480469bb46c0465ddc67, type: 3}
     visualType: 1
     slotSize: 0
@@ -399,6 +417,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.1
+      soundEffect: {fileID: 8300000, guid: 92d6e52b5b1c9924c8ee1c6a4a21b662, type: 3}
     - animationName: hand
       frames:
       - {fileID: 21300000, guid: c659f17b3332bf44397fdaa7540dc3b0, type: 3}
@@ -412,6 +431,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.15
+      soundEffect: {fileID: 8300000, guid: 162124b948c9a674ab238f02aec75805, type: 3}
     distractions:
     - animationName: flor
       frames:
@@ -428,6 +448,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.4
+      soundEffect: {fileID: 0}
     - animationName: vela
       frames:
       - {fileID: 21300000, guid: c1e4503bee7a4bb46b7bedcd6ae86dc7, type: 3}
@@ -436,6 +457,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.3
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: fe2349a2de097804db395af508773e69, type: 3}
     visualType: 1
     slotSize: 0
@@ -455,6 +477,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.15
+      soundEffect: {fileID: 8300000, guid: 4cf22a85d5af2914a940680ec2e2d81f, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -464,6 +487,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.4
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 5c72b9a8f3ba22349aeb81e23de7b803, type: 3}
     visualType: 1
     slotSize: 0
@@ -482,6 +506,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.1
+      soundEffect: {fileID: 8300000, guid: 4cf22a85d5af2914a940680ec2e2d81f, type: 3}
     - animationName: tentaculos
       frames:
       - {fileID: 21300000, guid: 00dee038c0a65d2449248dfa71bd440e, type: 3}
@@ -493,6 +518,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.15
+      soundEffect: {fileID: 8300000, guid: c0a8759aba4ea1248bfdb125e7674038, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -502,6 +528,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.4
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: bbbccba292d1d5644bc965a0ed896ac6, type: 3}
     visualType: 3
     slotSize: 0
@@ -517,6 +544,7 @@ MonoBehaviour:
       loop: 0
       pingPong: 0
       frameRate: 0.1
+      soundEffect: {fileID: 8300000, guid: d66bd735d7f09884e8186a243aab937f, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -526,6 +554,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 9b198a642509dc84a97131c49debdd4c, type: 3}
     visualType: 0
     slotSize: 0
@@ -546,6 +575,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 8300000, guid: 79fe86995e61c8740b7e1d39d8250497, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -555,6 +585,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 5b0ef3a54c83f1146a8d0addfd6b9f62, type: 3}
     visualType: 1
     slotSize: 0
@@ -575,6 +606,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.1
+      soundEffect: {fileID: 8300000, guid: 43173a87394ffe74db9f9a3bf3436d25, type: 3}
     distractions:
     - animationName: balanceo
       frames:
@@ -584,6 +616,7 @@ MonoBehaviour:
       loop: 1
       pingPong: 1
       frameRate: 0.2
+      soundEffect: {fileID: 0}
 --- !u!4 &25028883
 Transform:
   m_ObjectHideFlags: 0
@@ -17068,6 +17101,7 @@ MonoBehaviour:
     loop: 1
     pingPong: 1
     frameRate: 0.1
+    soundEffect: {fileID: 0}
 --- !u!114 &2105641195
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,4 +12,7 @@ public class SpriteAnimationData
     public bool pingPong = true;
 
     public float frameRate = 0.1f;
+
+    [Header("Audio")]
+    public AudioClip soundEffect;
 }
