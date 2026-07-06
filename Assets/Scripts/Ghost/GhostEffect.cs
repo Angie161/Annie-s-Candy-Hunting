@@ -26,10 +26,10 @@ public class GhostEffect : MonoBehaviour
 
         if (ghostSound != null)
         {
-            AudioSource.PlayClipAtPoint(
-                ghostSound,
-                transform.position
-            );
+            if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlaySFX(ghostSound);
+                }
         }
 
         if (animator == null || ghostAnimation == null)

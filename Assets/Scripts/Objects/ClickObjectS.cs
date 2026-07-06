@@ -214,9 +214,10 @@ public class ClickObjectS : MonoBehaviour
             currentAnimation.pingPong
         );
 
-        if (currentAnimation.soundEffect != null)
+        if (currentAnimation.soundEffect != null
+            && AudioManager.Instance != null)
         {
-            audioSource.PlayOneShot(
+            AudioManager.Instance.PlaySFX(
                 currentAnimation.soundEffect
             );
         }
@@ -325,6 +326,9 @@ public class ClickObjectS : MonoBehaviour
     {
         if (GameManager.Instance != null && GameManager.Instance.gameEnded)
             return;
+        
+        if (Time.timeScale == 0f)
+        return;
 
         // 🚨 BLOQUEO TOTAL DURANTE TRANSICIÓN
         if (currentTransition != TransitionState.None)

@@ -264,7 +264,15 @@ public class Sustometer : MonoBehaviour
                 stressPercent
             );
 
-        breathingAudio.volume =
-            Mathf.Clamp01(volume);
+        float sfxVolume = 1f;
+
+        if (AudioManager.Instance != null)
+            sfxVolume = AudioManager.Instance.GetSFXVolume();
+
+        float finalVolume =
+            Mathf.Clamp01(volume) *
+            sfxVolume;
+
+        breathingAudio.volume = finalVolume;
     }
 } 
