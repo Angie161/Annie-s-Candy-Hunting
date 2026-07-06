@@ -23,4 +23,16 @@ public class GameOver : MonoBehaviour
         // Ir a la tienda
         UnityEngine.SceneManagement.SceneManager.LoadScene("Shop");
     }
+
+    public void HowToPlay()
+    {
+        // Ir a la pantalla de cómo jugar
+        UnityEngine.SceneManagement.SceneManager.LoadScene("HowToPlay");
+    }
+
+    public void ExitGame()
+    {
+        // Salir del juego
+        Application.Quit();
+    }
 }

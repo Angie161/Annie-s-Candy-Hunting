@@ -2251,6 +2251,7 @@ GameObject:
   - component: {fileID: 193143943}
   - component: {fileID: 193143944}
   - component: {fileID: 193143945}
+  - component: {fileID: 193143946}
   m_Layer: 0
   m_Name: Annie
   m_TagString: Player
@@ -2354,6 +2355,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &193143946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193143942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd75c849dc49c1441900eaa08eb77374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSkinLoader
 --- !u!1 &209313830
 GameObject:
   m_ObjectHideFlags: 0
