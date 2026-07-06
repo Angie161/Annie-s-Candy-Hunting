@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     public AudioClip gameOverScream;
 
+    [Header("Music")]
+    public AudioClip runMusic;
+
     // ---------------- CANDY SYSTEM ----------------
     [Header("Candy System")]
     public int runCandies = 0;
@@ -56,6 +59,11 @@ public class GameManager : MonoBehaviour
         isResetting = false;
 
         ResetRun();
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMusic(runMusic);
+        }
     }
 
     void Update()
@@ -165,19 +173,24 @@ public class GameManager : MonoBehaviour
     IEnumerator EndGameSequence()
     {
         Debug.Log("ENDGAME COROUTINE EMPEZO");
+
         if (gameEnded) yield break;
 
         gameEnded = true;
-        
-        if (gameOverScream != null)
-        {
-            if (AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlaySFX(gameOverScream);
-            }
-        }
 
         cameraMovement.canMove = false;
+
+        // STOP MUSICA DE RUN
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopMusic();
+        }
+
+        // GRITO
+        if (gameOverScream != null && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(gameOverScream);
+        }
 
         Debug.Log("🔥 END GAME STARTED");
 
@@ -199,6 +212,10 @@ public class GameManager : MonoBehaviour
 
         SaveData.Data.totalCandies += runCandies;
         SaveSystem.Save(SaveData.Data);
+
+        // 👇 IMPORTANTE: esperar un poco para que el grito no se corte
+        yield return new WaitForSeconds(0.2f);
+
         SceneManager.LoadScene("GameOver");
 
         Debug.Log("🎉 GAME COMPLETED");

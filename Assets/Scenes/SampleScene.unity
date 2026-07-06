@@ -15896,6 +15896,7 @@ MonoBehaviour:
   maxActiveAnomalies: 2
   difficultyIncreaseInterval: 30
   gameOverScream: {fileID: 8300000, guid: d88164531e045c04192342aa7fdb987e, type: 3}
+  runMusic: {fileID: 8300000, guid: 7c560f2c392df5c4e90efcd976fa4779, type: 3}
   runCandies: 0
   candyInterval: 4
   candiesPerTick: 1
