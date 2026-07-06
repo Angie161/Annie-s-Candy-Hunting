@@ -48,6 +48,7 @@ public class ClickObjectS : MonoBehaviour
     private float wallBackwardRange;
 
     private float flatWallForwardRange;
+    private float flatWallBackwardRange;
 
     private float floorForwardRange;
     private float floorZOffset;
@@ -58,10 +59,12 @@ public class ClickObjectS : MonoBehaviour
     void Awake(){
         wallForwardRange = 20f;
         wallBackwardRange = 5f;
+
         flatWallForwardRange = 15f;
+        flatWallBackwardRange = 3.5f;
 
         floorForwardRange = 28f;
-        floorZOffset = -7f;
+        floorZOffset = -10f;
 
         ceilingForwardRange = 25f;
         ceilingZOffset = -3f;
@@ -123,7 +126,7 @@ public class ClickObjectS : MonoBehaviour
                 if (data != null && data.visualType == VisualType.FlatWall)
                 {
                     currentForwardRange = flatWallForwardRange;
-                    currentBackwardRange = wallBackwardRange;
+                    currentBackwardRange = flatWallBackwardRange;
                 }
                 else
                 {
@@ -363,7 +366,7 @@ public class ClickObjectS : MonoBehaviour
         return count;
     }
 
-/*
+
 void OnDrawGizmosSelected()
 {
     if (placementType != ObjectPlacementType.Wall)
@@ -397,5 +400,5 @@ void OnDrawGizmosSelected()
     Gizmos.color = Color.red;
     Gizmos.DrawSphere(player.position, 0.15f);
 }
-*/
+
 }
