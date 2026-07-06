@@ -6,6 +6,9 @@ public class GhostEffect : MonoBehaviour
 
     public SpriteAnimationData ghostAnimation;
 
+    [Header("Audio")]
+    public AudioClip ghostSound;
+
     void Awake()
     {
         animator = GetComponent<SpriteAnimator>();
@@ -20,6 +23,14 @@ public class GhostEffect : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null)
             sr.enabled = true;
+
+        if (ghostSound != null)
+        {
+            AudioSource.PlayClipAtPoint(
+                ghostSound,
+                transform.position
+            );
+        }
 
         if (animator == null || ghostAnimation == null)
             return;

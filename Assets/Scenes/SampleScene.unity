@@ -17102,6 +17102,7 @@ MonoBehaviour:
     pingPong: 1
     frameRate: 0.1
     soundEffect: {fileID: 0}
+  ghostSound: {fileID: 0}
 --- !u!114 &2105641195
 MonoBehaviour:
   m_ObjectHideFlags: 0

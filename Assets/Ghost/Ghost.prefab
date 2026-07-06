@@ -126,3 +126,5 @@ MonoBehaviour:
     loop: 1
     pingPong: 1
     frameRate: 0.15
+    soundEffect: {fileID: 0}
+  ghostSound: {fileID: 8300000, guid: 5906663eb269d7a4db39f81fd29871d5, type: 3}
