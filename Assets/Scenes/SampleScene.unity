@@ -2027,8 +2027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: -40}
-  m_SizeDelta: {x: 100, y: 400}
+  m_AnchoredPosition: {x: -20, y: -38}
+  m_SizeDelta: {x: 100, y: 390}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &149433351
 MonoBehaviour:
@@ -9276,7 +9276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47058824, g: 0.039215688, b: 0.039215688, a: 0}
+  m_Color: {r: 0.47058824, g: 0.039215688, b: 0.039215688, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10485,7 +10485,9 @@ MonoBehaviour:
   maxStress: 100
   breathingAudio: {fileID: 1517247598}
   anomalyStressPerSecond: 2
-  mistakeStress: 0.5
+  mistakeStress: 5
+  stressRecoveryPerSecond: 0.2
+  recoveryDelay: 5
 --- !u!4 &1517247597
 Transform:
   m_ObjectHideFlags: 0
@@ -11868,8 +11870,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0}
   m_AnchorMax: {x: 0.75, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1589710905
 GameObject:

@@ -31,9 +31,14 @@ public class Sustometer : MonoBehaviour
     //[Header("UI")]
     //public TextMeshProUGUI stressText;
 
+    // ---------------- STRESS ----------------
     [Header("Stress Gain")]
     public float anomalyStressPerSecond = 2f;
-    public float mistakeStress = 1.0f;
+    public float mistakeStress = 7f;
+
+    public float stressRecoveryPerSecond = 0.2f;
+    private float safeTime = 0f;
+    public float recoveryDelay = 5f;
 
     private ClickObjectS[] objects;
 
@@ -75,6 +80,8 @@ public class Sustometer : MonoBehaviour
 
     void UpdateStressFromAnomalies()
     {
+        bool hasAnomaly = false;
+
         foreach (var obj in objects)
         {
             if (obj == null)
@@ -82,8 +89,36 @@ public class Sustometer : MonoBehaviour
 
             if (obj.IsInAnomalyState())
             {
-                stress += anomalyStressPerSecond * Time.deltaTime;
+                hasAnomaly = true;
+                break;
             }
+        }
+
+        if (hasAnomaly)
+        {
+            safeTime = 0f;
+
+            stress +=
+                anomalyStressPerSecond *
+                Time.deltaTime;
+        }
+        else
+        {
+            safeTime += Time.deltaTime;
+
+            if (safeTime < recoveryDelay)
+                return;
+
+            float recovery =
+                Mathf.Min(
+                    1f,
+                    0.2f +
+                    Mathf.Floor((safeTime - recoveryDelay) / 3.0f) * 0.2f
+                );
+
+            stress -=
+                recovery *
+                Time.deltaTime;
         }
     }
 
