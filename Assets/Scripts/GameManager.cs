@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
     // ---------------- FADE ----------------
     private FadeController fadeController;
 
+    // ---------------- AUDIO----------------
+    [Header("Audio")]
+    public AudioClip gameOverScream;
+
     // ---------------- CANDY SYSTEM ----------------
     [Header("Candy System")]
     public int runCandies = 0;
@@ -164,6 +168,14 @@ public class GameManager : MonoBehaviour
         if (gameEnded) yield break;
 
         gameEnded = true;
+        
+        if (gameOverScream != null)
+        {
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFX(gameOverScream);
+            }
+        }
 
         cameraMovement.canMove = false;
 

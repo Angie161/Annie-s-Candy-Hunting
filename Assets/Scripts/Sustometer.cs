@@ -17,6 +17,9 @@ public class Sustometer : MonoBehaviour
     public float stress = 0f;
     public float maxStress = 100f;
 
+    [Header("Breathing Audio")]
+    public AudioSource breathingAudio;
+
     //[Header("UI")]
     //public TextMeshProUGUI stressText;
 
@@ -103,6 +106,8 @@ public class Sustometer : MonoBehaviour
             stressBar.value = stress;
         }
 
+        UpdateBreathing();
+
         if (fillImage != null)
         {
             float t = stress / maxStress;
@@ -135,5 +140,38 @@ public class Sustometer : MonoBehaviour
             $"Stress: {stress:F1}/{maxStress:F0}\n" +
             $"{percent:F1}%";*/
 
+    }
+
+    void UpdateBreathing()
+    {
+        if (breathingAudio == null)
+            return;
+
+        float stressPercent = stress / maxStress;
+
+        if (stressPercent < 0.75f)
+        {
+            breathingAudio.volume = 0f;
+
+            if (breathingAudio.isPlaying)
+                breathingAudio.Stop();
+
+            return;
+        }
+
+        if (!breathingAudio.isPlaying)
+        {
+            breathingAudio.Play();
+        }
+
+        float volume =
+            Mathf.InverseLerp(
+                0.75f,
+                1f,
+                stressPercent
+            );
+
+        breathingAudio.volume =
+            Mathf.Clamp01(volume);
     }
 } 
