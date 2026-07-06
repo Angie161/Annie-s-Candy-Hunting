@@ -19,6 +19,12 @@ public class ButtonShop : MonoBehaviour
 
     private void Start()
 {
+
+    if (AudioManager.Instance != null)
+    {
+        AudioManager.Instance.PlayMenuMusic();
+    }
+
     selectedSkin = PlayerPrefs.GetInt("SelectedSkin", 0);
     previewAnimator.runtimeAnimatorController = skinControllers[selectedSkin];
 

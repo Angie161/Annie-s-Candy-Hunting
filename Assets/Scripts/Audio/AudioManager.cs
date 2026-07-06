@@ -7,6 +7,9 @@ public class AudioManager : MonoBehaviour
     private AudioSource sfxSource;
     private AudioSource musicSource;
 
+    [Header("Menu Music")]
+    public AudioClip menuMusic;
+
     void Awake()
     {
         if (Instance != null)
@@ -42,6 +45,21 @@ public class AudioManager : MonoBehaviour
         if (clip == null) return;
 
         musicSource.clip = clip;
+        musicSource.Play();
+    }
+
+    public void PlayMenuMusic()
+    {
+        if (menuMusic == null)
+            return;
+
+        if (musicSource.isPlaying &&
+            musicSource.clip == menuMusic)
+        {
+            return;
+        }
+
+        musicSource.clip = menuMusic;
         musicSource.Play();
     }
 
