@@ -38,8 +38,9 @@ public class GhostEffect : MonoBehaviour
         animator.Play(
             ghostAnimation.frames,
             ghostAnimation.frameRate,
-            ghostAnimation.loop,
-            ghostAnimation.pingPong
+            ghostAnimation.loopFrameRate,
+            ghostAnimation.animationType,
+            ghostAnimation.introFrames
         );
 
         StartCoroutine(DestroyAfter());

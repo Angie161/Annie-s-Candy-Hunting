@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!114 &3955374982415461276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +124,9 @@ MonoBehaviour:
     - {fileID: 21300000, guid: aa1fd8bc82a8ae644b022c60a7e47c7a, type: 3}
     - {fileID: 21300000, guid: 27eb301e84b34e346b57a9d6d38ee133, type: 3}
     - {fileID: 21300000, guid: d41d9d40d8a2d984bae4acd91fc319f0, type: 3}
-    loop: 1
-    pingPong: 1
     frameRate: 0.15
+    loopFrameRate: 0.15
+    animationType: 2
+    introFrames: 1
     soundEffect: {fileID: 0}
   ghostSound: {fileID: 8300000, guid: 14ec0a53680c266478a6d2ba06140f95, type: 3}
