@@ -54,23 +54,19 @@ public class PlayerSkin : MonoBehaviour
    }
 
    public void ShowSkinCatUI()
-   {
-       HideAllSkins();
-       skinCatUI.SetActive(!skinCatUI.activeSelf);
-       distorsionUI.SetActive(true);
-       textPrice.text = "150";
-       selectedSkin = "Cat";
-       selectedPrice = 150;
-   }
+    {
+        HideAllSkins();
+        skinCatUI.SetActive(!skinCatUI.activeSelf);
+        distorsionUI.SetActive(true);
 
+        SetSkinPrice("Cat", 150);
+    }
     public void ShowSkinWitchUI()
     {
          HideAllSkins();
          skinWitchUI.SetActive(!skinWitchUI.activeSelf);
          distorsionUI.SetActive(true);
-         textPrice.text = "250";
-         selectedSkin = "Witch";
-         selectedPrice = 250;
+         SetSkinPrice("Witch", 250);
     }
 
     public void ShowSkinCowgirlUI()
@@ -78,39 +74,31 @@ public class PlayerSkin : MonoBehaviour
         HideAllSkins();
         skinCowgirlUI.SetActive(!skinCowgirlUI.activeSelf);
         distorsionUI.SetActive(true);
-        textPrice.text = "400";
-        selectedSkin = "Cowgirl";
-        selectedPrice = 400;
+        SetSkinPrice("Cowgirl", 400);
     }
     
     public void ShowSkinGhostUI()
     {
         HideAllSkins();
         skinGhostUI.SetActive(!skinGhostUI.activeSelf);
-        textPrice.text = "900";
         distorsionUI.SetActive(!distorsionUI.activeSelf);
-        selectedSkin = "Ghost";
-        selectedPrice = 900;
+        SetSkinPrice("Ghost", 900);
     }
 
     public void ShowSkinSkeletonUI()
     {
         HideAllSkins();
         skinSkeletonUI.SetActive(!skinSkeletonUI.activeSelf);
-        textPrice.text = "900";
         distorsionUI.SetActive(!distorsionUI.activeSelf);
-        selectedSkin = "Skeleton";
-        selectedPrice = 900;
+        SetSkinPrice("Skeleton", 900);
     }
 
     public void ShowSkinRedHoodUI()
     {
         HideAllSkins();
         skinRedHoodUI.SetActive(!skinRedHoodUI.activeSelf);
-        textPrice.text = "1000";
         distorsionUI.SetActive(!distorsionUI.activeSelf);
-        selectedSkin = "RedHood";
-        selectedPrice = 1000;
+        SetSkinPrice("RedHood", 1000);
     }
 
     public void ShowSkinPrincessUI()
@@ -118,9 +106,7 @@ public class PlayerSkin : MonoBehaviour
         HideAllSkins();
         skinPrincessUI.SetActive(!skinPrincessUI.activeSelf);
         distorsionUI.SetActive(true);
-        textPrice.text = "400";
-        selectedSkin = "Princess";
-        selectedPrice = 400;
+        SetSkinPrice("Princess", 400);
     }
 
     public void ShowSkinFairyUI()
@@ -128,9 +114,7 @@ public class PlayerSkin : MonoBehaviour
         HideAllSkins();
         skinFairyUI.SetActive(!skinFairyUI.activeSelf);
         distorsionUI.SetActive(true );
-        textPrice.text = "500";
-        selectedSkin = "Fairy";
-        selectedPrice = 500;
+        SetSkinPrice("Fairy", 500);
     }
 
     public void BuySkin()
@@ -164,6 +148,7 @@ public class PlayerSkin : MonoBehaviour
         wallet.Refresh();
 
     Debug.Log("Compraste " + selectedSkin);
+    UpdatePriceText();
 }
 
 public void WearSkin()
@@ -178,6 +163,31 @@ public void WearSkin()
     SaveSystem.Save(SaveData.Data);
 
     Debug.Log("Skin equipada: " + selectedSkin);
+    UpdatePriceText();
+}
+
+private void SetSkinPrice(string skinName, int price)
+{
+    selectedSkin = skinName;
+    selectedPrice = price;
+
+    UpdatePriceText();
+}
+
+private void UpdatePriceText()
+{
+    if (SaveData.Data.equippedSkin == selectedSkin)
+    {
+        textPrice.text = "Wearing";
+    }
+    else if (SaveData.Data.unlockedSkins.Contains(selectedSkin))
+    {
+        textPrice.text = "Owned";
+    }
+    else
+    {
+        textPrice.text = selectedPrice.ToString();
+    }
 }
 
 
