@@ -259,7 +259,7 @@ MonoBehaviour:
   skinRedHoodUI: {fileID: 1614905923}
   skinPrincessUI: {fileID: 394964208}
   skinFairyUI: {fileID: 399151117}
-  skinDefaultUI: {fileID: 0}
+  skinDefaultUI: {fileID: 494741138}
   distorsionUI: {fileID: 45582799}
   textPrice: {fileID: 1360308096}
 --- !u!4 &77428123
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 87213558}
   - component: {fileID: 87213557}
   m_Layer: 5
-  m_Name: AnnieWitchBack
+  m_Name: AnnieSkeletonBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,14 +304,14 @@ RectTransform:
   m_GameObject: {fileID: 87213555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 478995064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87213557
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 181622678}
   - component: {fileID: 181622677}
   m_Layer: 5
-  m_Name: AnnieWitchBack
+  m_Name: AnnieCowgirlBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,14 +379,14 @@ RectTransform:
   m_GameObject: {fileID: 181622675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 300248852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181622677
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1138,14 +1138,14 @@ RectTransform:
   m_GameObject: {fileID: 308256411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 300248852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 21}
+  m_AnchoredPosition: {x: 153.37, y: 6.1954}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308256413
@@ -1269,14 +1269,14 @@ RectTransform:
   m_GameObject: {fileID: 383417076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 687406643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383417078
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1862,6 +1862,110 @@ RectTransform:
   - {fileID: 1442727373}
   - {fileID: 1007268236}
   - {fileID: 87213556}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!1 &494741138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 494741142}
+  - component: {fileID: 494741141}
+  - component: {fileID: 494741140}
+  - component: {fileID: 494741139}
+  m_Layer: 5
+  m_Name: Canvas DefaultSkin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &494741139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494741138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &494741140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494741138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &494741141
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494741138}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
+--- !u!224 &494741142
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494741138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1328563699}
+  - {fileID: 1086923512}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2040,7 +2144,7 @@ GameObject:
   - component: {fileID: 548611643}
   - component: {fileID: 548611642}
   m_Layer: 5
-  m_Name: AnnieWitchFront
+  m_Name: AnnieRedHoodFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2055,14 +2159,14 @@ RectTransform:
   m_GameObject: {fileID: 548611640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1614905927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548611642
@@ -2337,14 +2441,14 @@ RectTransform:
   m_GameObject: {fileID: 580325232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 393811292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580325234
@@ -2398,7 +2502,7 @@ GameObject:
   - component: {fileID: 586045381}
   - component: {fileID: 586045380}
   m_Layer: 5
-  m_Name: WitchSelect
+  m_Name: PrincessSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2413,14 +2517,14 @@ RectTransform:
   m_GameObject: {fileID: 586045378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394964212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 484, y: -451}
+  m_AnchoredPosition: {x: 153.99, y: -139.87}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586045380
@@ -2467,10 +2571,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77428121}
-        m_TargetAssemblyTypeName: ButtonShop, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 77428122}
+        m_TargetAssemblyTypeName: PlayerSkin, Assembly-CSharp
+        m_MethodName: ShowSkinPrincessUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2529,7 +2633,7 @@ GameObject:
   - component: {fileID: 612632532}
   - component: {fileID: 612632531}
   m_Layer: 5
-  m_Name: AnnieWitchBack
+  m_Name: AnniePrincessBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,14 +2648,14 @@ RectTransform:
   m_GameObject: {fileID: 612632529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394964212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612632531
@@ -2640,7 +2744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2799,14 +2903,14 @@ RectTransform:
   m_GameObject: {fileID: 764610951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 393811292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764610953
@@ -2895,7 +2999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3028,14 +3132,14 @@ RectTransform:
   m_GameObject: {fileID: 948390764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 687406643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948390766
@@ -3220,7 +3324,7 @@ GameObject:
   - component: {fileID: 1007268238}
   - component: {fileID: 1007268237}
   m_Layer: 5
-  m_Name: AnnieWitchFront
+  m_Name: AnnieSkeletonFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3235,14 +3339,14 @@ RectTransform:
   m_GameObject: {fileID: 1007268235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 478995064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007268237
@@ -3295,7 +3399,7 @@ GameObject:
   - component: {fileID: 1024775979}
   - component: {fileID: 1024775978}
   m_Layer: 5
-  m_Name: AnnieWitchBack
+  m_Name: AnnieGhostBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3310,14 +3414,14 @@ RectTransform:
   m_GameObject: {fileID: 1024775976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 773493321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024775978
@@ -3455,6 +3559,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025828723}
+  m_CullTransparentMesh: 1
+--- !u!1 &1086923511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1086923512}
+  - component: {fileID: 1086923514}
+  - component: {fileID: 1086923513}
+  m_Layer: 5
+  m_Name: AnnieDefaultBack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1086923512
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086923511}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 494741142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1086923513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086923511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 090c01ac8b0ad484d9a0b54e344a6ae0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1086923514
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086923511}
   m_CullTransparentMesh: 1
 --- !u!1 &1103986100
 GameObject:
@@ -3600,7 +3779,7 @@ GameObject:
   - component: {fileID: 1134411232}
   - component: {fileID: 1134411231}
   m_Layer: 5
-  m_Name: AnnieWitchFront
+  m_Name: AnnieCowgirlFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3615,14 +3794,14 @@ RectTransform:
   m_GameObject: {fileID: 1134411229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 300248852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1134411231
@@ -3750,7 +3929,7 @@ GameObject:
   - component: {fileID: 1289796843}
   - component: {fileID: 1289796842}
   m_Layer: 5
-  m_Name: AnnieWitchFront
+  m_Name: AnnieGhostFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3765,14 +3944,14 @@ RectTransform:
   m_GameObject: {fileID: 1289796840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 773493321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289796842
@@ -4077,6 +4256,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318891654}
   m_CullTransparentMesh: 1
+--- !u!1 &1328563698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1328563699}
+  - component: {fileID: 1328563701}
+  - component: {fileID: 1328563700}
+  m_Layer: 5
+  m_Name: AnnieDefaultFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1328563699
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328563698}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 494741142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1328563700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328563698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7713996ac3204e647868b6445ba20303, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1328563701
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328563698}
+  m_CullTransparentMesh: 1
 --- !u!1 &1360308094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4227,7 +4481,7 @@ GameObject:
   - component: {fileID: 1409483912}
   - component: {fileID: 1409483911}
   m_Layer: 5
-  m_Name: WitchSelect
+  m_Name: FairySelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4242,14 +4496,14 @@ RectTransform:
   m_GameObject: {fileID: 1409483909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 399151121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 903, y: -448}
+  m_AnchoredPosition: {x: 283.65, y: -138.93}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409483911
@@ -4296,10 +4550,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77428121}
-        m_TargetAssemblyTypeName: ButtonShop, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 77428122}
+        m_TargetAssemblyTypeName: PlayerSkin, Assembly-CSharp
+        m_MethodName: ShowSkinFairyUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4496,7 +4750,7 @@ GameObject:
   - component: {fileID: 1442727375}
   - component: {fileID: 1442727374}
   m_Layer: 5
-  m_Name: WitchSelect
+  m_Name: SkeletonSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4511,14 +4765,14 @@ RectTransform:
   m_GameObject: {fileID: 1442727372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 478995064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 486, y: -215}
+  m_AnchoredPosition: {x: 154.61, y: -66.835}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442727374
@@ -4565,10 +4819,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77428121}
-        m_TargetAssemblyTypeName: ButtonShop, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 77428122}
+        m_TargetAssemblyTypeName: PlayerSkin, Assembly-CSharp
+        m_MethodName: ShowSkinSkeletonUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4845,14 +5099,14 @@ RectTransform:
   m_GameObject: {fileID: 1556606367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 393811292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 486.66675, y: 260}
+  m_AnchoredPosition: {x: 154.81, y: 80.154}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556606369
@@ -4997,7 +5251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5110,7 +5364,7 @@ GameObject:
   - component: {fileID: 1686088472}
   - component: {fileID: 1686088471}
   m_Layer: 5
-  m_Name: AnnieWitchBack
+  m_Name: AnnieRedHoodBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5125,14 +5379,14 @@ RectTransform:
   m_GameObject: {fileID: 1686088469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1614905927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686088471
@@ -5449,7 +5703,7 @@ GameObject:
   - component: {fileID: 1780167879}
   - component: {fileID: 1780167878}
   m_Layer: 5
-  m_Name: AnnieWitchBack
+  m_Name: AnnieFairyBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5464,14 +5718,14 @@ RectTransform:
   m_GameObject: {fileID: 1780167876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 8.069161, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.4969192, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 399151121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741.3334, y: 57.333313}
+  m_AnchoredPosition: {x: -225.19, y: 17.44}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780167878
@@ -5524,7 +5778,7 @@ GameObject:
   - component: {fileID: 1791234534}
   - component: {fileID: 1791234533}
   m_Layer: 5
-  m_Name: AnnieWitchFront
+  m_Name: AnnieFairyFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5539,14 +5793,14 @@ RectTransform:
   m_GameObject: {fileID: 1791234531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 399151121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791234533
@@ -5600,7 +5854,7 @@ GameObject:
   - component: {fileID: 1805074592}
   - component: {fileID: 1805074591}
   m_Layer: 5
-  m_Name: WitchSelect
+  m_Name: GhostSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5615,14 +5869,14 @@ RectTransform:
   m_GameObject: {fileID: 1805074589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 773493321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 903, y: 21}
+  m_AnchoredPosition: {x: 283.65, y: 6.1954}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1805074591
@@ -5669,10 +5923,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77428121}
-        m_TargetAssemblyTypeName: ButtonShop, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 77428122}
+        m_TargetAssemblyTypeName: PlayerSkin, Assembly-CSharp
+        m_MethodName: ShowSkinGhostUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5731,7 +5985,7 @@ GameObject:
   - component: {fileID: 1845842350}
   - component: {fileID: 1845842349}
   m_Layer: 5
-  m_Name: AnnieWitchFront
+  m_Name: AnniePrincessFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5746,14 +6000,14 @@ RectTransform:
   m_GameObject: {fileID: 1845842347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7846136, y: 7.7456684, z: 6.6517334}
+  m_LocalScale: {x: 1.7899892, y: 2.3968177, z: 2.0583105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394964212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182.66663, y: 77.33331}
+  m_AnchoredPosition: {x: -52.311, y: 23.628}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845842349
@@ -5807,7 +6061,7 @@ GameObject:
   - component: {fileID: 1882404270}
   - component: {fileID: 1882404269}
   m_Layer: 5
-  m_Name: WitchSelect
+  m_Name: RedHoodSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5822,14 +6076,14 @@ RectTransform:
   m_GameObject: {fileID: 1882404267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1614905927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 903, y: -217}
+  m_AnchoredPosition: {x: 283.65, y: -67.453}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1882404269
@@ -5876,10 +6130,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77428121}
-        m_TargetAssemblyTypeName: ButtonShop, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 77428122}
+        m_TargetAssemblyTypeName: PlayerSkin, Assembly-CSharp
+        m_MethodName: ShowSkinRedHoodUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6031,14 +6285,14 @@ RectTransform:
   m_GameObject: {fileID: 2015331826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.152271, y: 6.913205, z: 2.98076}
+  m_LocalScale: {x: 0.66599816, y: 2.1392202, z: 0.9223656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 687406643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 903, y: 260}
+  m_AnchoredPosition: {x: 283.65, y: 80.154}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015331828
@@ -6490,6 +6744,7 @@ SceneRoots:
   - {fileID: 77428123}
   - {fileID: 210901828}
   - {fileID: 1669993904}
+  - {fileID: 494741142}
   - {fileID: 393811292}
   - {fileID: 687406643}
   - {fileID: 300248852}
