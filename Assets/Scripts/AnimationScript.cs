@@ -7,9 +7,12 @@ public class PlayerSkinLoader : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("PlayerSkinLoader ejecutándose");
+        
         animator = GetComponent<Animator>();
 
-        string skin = PlayerPrefs.GetString("CurrentSkin", "Default");
+        string skin = string.IsNullOrEmpty(SaveData.Data.equippedSkin)
+        ? "Default" : SaveData.Data.equippedSkin;
 
         switch (skin)
         {

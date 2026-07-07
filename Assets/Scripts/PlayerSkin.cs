@@ -29,12 +29,25 @@ public class PlayerSkin : MonoBehaviour
 
    private string selectedSkin = "Default";
    private int selectedPrice = 0;
-   
 
    [SerializeField] private TMP_Text textPrice;
 
+   private void HideAllSkins()
+{
+    skinDefaultUI.SetActive(false);
+    skinCatUI.SetActive(false);
+    skinWitchUI.SetActive(false);
+    skinCowgirlUI.SetActive(false);
+    skinGhostUI.SetActive(false);
+    skinSkeletonUI.SetActive(false);
+    skinRedHoodUI.SetActive(false);
+    skinPrincessUI.SetActive(false);
+    skinFairyUI.SetActive(false);
+}
+
    public void ShowSkinDefaultUI()
    {
+       HideAllSkins();
        textPrice.text = "";
        selectedSkin = "Default";
        selectedPrice = 0;
@@ -42,8 +55,9 @@ public class PlayerSkin : MonoBehaviour
 
    public void ShowSkinCatUI()
    {
+       HideAllSkins();
        skinCatUI.SetActive(!skinCatUI.activeSelf);
-       skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
+       distorsionUI.SetActive(true);
        textPrice.text = "150";
        selectedSkin = "Cat";
        selectedPrice = 150;
@@ -51,8 +65,9 @@ public class PlayerSkin : MonoBehaviour
 
     public void ShowSkinWitchUI()
     {
+         HideAllSkins();
          skinWitchUI.SetActive(!skinWitchUI.activeSelf);
-         skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
+         distorsionUI.SetActive(true);
          textPrice.text = "250";
          selectedSkin = "Witch";
          selectedPrice = 250;
@@ -60,8 +75,9 @@ public class PlayerSkin : MonoBehaviour
 
     public void ShowSkinCowgirlUI()
     {
+        HideAllSkins();
         skinCowgirlUI.SetActive(!skinCowgirlUI.activeSelf);
-        skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
+        distorsionUI.SetActive(true);
         textPrice.text = "400";
         selectedSkin = "Cowgirl";
         selectedPrice = 400;
@@ -69,38 +85,39 @@ public class PlayerSkin : MonoBehaviour
     
     public void ShowSkinGhostUI()
     {
+        HideAllSkins();
         skinGhostUI.SetActive(!skinGhostUI.activeSelf);
         textPrice.text = "900";
         distorsionUI.SetActive(!distorsionUI.activeSelf);
-        skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
         selectedSkin = "Ghost";
         selectedPrice = 900;
     }
 
     public void ShowSkinSkeletonUI()
     {
+        HideAllSkins();
         skinSkeletonUI.SetActive(!skinSkeletonUI.activeSelf);
         textPrice.text = "900";
         distorsionUI.SetActive(!distorsionUI.activeSelf);
-        skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
         selectedSkin = "Skeleton";
         selectedPrice = 900;
     }
 
     public void ShowSkinRedHoodUI()
     {
+        HideAllSkins();
         skinRedHoodUI.SetActive(!skinRedHoodUI.activeSelf);
         textPrice.text = "1000";
         distorsionUI.SetActive(!distorsionUI.activeSelf);
-        skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
         selectedSkin = "RedHood";
         selectedPrice = 1000;
     }
 
     public void ShowSkinPrincessUI()
     {
+        HideAllSkins();
         skinPrincessUI.SetActive(!skinPrincessUI.activeSelf);
-        skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
+        distorsionUI.SetActive(true);
         textPrice.text = "400";
         selectedSkin = "Princess";
         selectedPrice = 400;
@@ -108,8 +125,9 @@ public class PlayerSkin : MonoBehaviour
 
     public void ShowSkinFairyUI()
     {
+        HideAllSkins();
         skinFairyUI.SetActive(!skinFairyUI.activeSelf);
-        skinDefaultUI.SetActive(!skinDefaultUI.activeSelf);
+        distorsionUI.SetActive(true );
         textPrice.text = "500";
         selectedSkin = "Fairy";
         selectedPrice = 500;
