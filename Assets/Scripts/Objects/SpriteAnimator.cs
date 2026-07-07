@@ -13,6 +13,12 @@ public class SpriteAnimator : MonoBehaviour
 
     private bool playingForward = true;
     private float currentFrameRate = 0.1f;
+    public float loopFrameRate = 0.15f;
+
+    private float currentLoopFrameRate;
+
+    private AnimationType currentAnimationType;
+    private int currentIntroFrames;
 
     private PolygonCollider2D polygonCollider;
     private BoxCollider boxCollider;
@@ -27,7 +33,12 @@ public class SpriteAnimator : MonoBehaviour
         originalSprite = sprite;
     }
 
-    public void Play(Sprite[] frames, float frameRate, bool loop, bool pingPong)
+    public void Play(
+        Sprite[] frames,
+        float frameRate,
+        float loopFrameRate,
+        AnimationType animationType,
+        int introFrames)
     {
         if (frames == null || frames.Length == 0)
             return;
@@ -44,68 +55,124 @@ public class SpriteAnimator : MonoBehaviour
 
         currentFrames = frames;
         currentFrameRate = frameRate;
+        currentLoopFrameRate = loopFrameRate;
+        currentAnimationType = animationType;
+        currentIntroFrames = Mathf.Clamp(introFrames, 0, frames.Length);
 
         currentAnimation = StartCoroutine(
-            PlayRoutine(loop, pingPong)
+            PlayRoutine()
         );
     }
 
-    IEnumerator PlayRoutine(bool loop, bool pingPong)
+    IEnumerator PlayRoutine()
     {
         currentFrame = 0;
-        playingForward = true;
 
-        while (true)
+        switch (currentAnimationType)
         {
-            rend.sprite = currentFrames[currentFrame];
-            UpdateCollider();
+            // ---------------- HOLD ----------------
+            case AnimationType.Hold:
 
-            yield return new WaitForSeconds(currentFrameRate);
-
-            if (pingPong)
-            {
-                if (playingForward)
+                while (currentFrame < currentFrames.Length)
                 {
+                    rend.sprite = currentFrames[currentFrame];
+                    UpdateCollider();
+
+                    yield return new WaitForSeconds(currentFrameRate);
+
                     currentFrame++;
-
-                    if (currentFrame >= currentFrames.Length)
-                    {
-                        currentFrame = currentFrames.Length - 2;
-                        playingForward = false;
-                    }
                 }
-                else
-                {
-                    currentFrame--;
 
-                    if (currentFrame < 0)
+                currentFrame = currentFrames.Length - 1;
+                break;
+
+
+            // ---------------- FULL LOOP ----------------
+            case AnimationType.FullLoop:
+
+                playingForward = true;
+
+                while (true)
+                {
+                    rend.sprite = currentFrames[currentFrame];
+                    UpdateCollider();
+
+                    yield return new WaitForSeconds(currentFrameRate);
+
+                    if (playingForward)
                     {
-                        if (!loop)
+                        currentFrame++;
+
+                        if (currentFrame >= currentFrames.Length)
                         {
-                            currentFrame = 0;
-                            yield break;
+                            currentFrame = currentFrames.Length - 2;
+                            playingForward = false;
                         }
-
-                        currentFrame = 1;
-                        playingForward = true;
                     }
-                }
-            }
-            else
-            {
-                currentFrame++;
-
-                if (currentFrame >= currentFrames.Length)
-                {
-                    if (!loop)
+                    else
                     {
-                        currentFrame = currentFrames.Length - 1;
-                        yield break;
-                    }
+                        currentFrame--;
 
-                    currentFrame = 0;
+                        if (currentFrame < 0)
+                        {
+                            currentFrame = 1;
+                            playingForward = true;
+                        }
+                    }
                 }
-            }
+
+
+            // ---------------- INTRO + LOOP ----------------
+            case AnimationType.IntroLoop:
+
+                // Intro
+                while (currentFrame < currentIntroFrames)
+                {
+                    rend.sprite = currentFrames[currentFrame];
+                    UpdateCollider();
+
+                    yield return new WaitForSeconds(currentFrameRate);
+
+                    currentFrame++;
+                }
+
+                if (currentIntroFrames >= currentFrames.Length)
+                {
+                    currentFrame = currentFrames.Length - 1;
+                    yield break;
+                }
+
+                // Loop PingPong
+                playingForward = true;
+
+                while (true)
+                {
+                    rend.sprite = currentFrames[currentFrame];
+                    UpdateCollider();
+
+                    yield return new WaitForSeconds(currentLoopFrameRate);
+
+                    if (playingForward)
+                    {
+                        currentFrame++;
+
+                        if (currentFrame >= currentFrames.Length)
+                        {
+                            currentFrame = currentFrames.Length - 2;
+                            playingForward = false;
+                        }
+                    }
+                    else
+                    {
+                        currentFrame--;
+
+                        if (currentFrame < currentIntroFrames)
+                        {
+                            currentFrame = currentIntroFrames + 1;
+                            playingForward = true;
+                        }
+                    }
+                }
         }
     }
 

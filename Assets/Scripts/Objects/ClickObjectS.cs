@@ -210,8 +210,9 @@ public class ClickObjectS : MonoBehaviour
         spriteAnimator.Play(
             currentAnimation.frames,
             currentAnimation.frameRate,
-            currentAnimation.loop,
-            currentAnimation.pingPong
+            currentAnimation.loopFrameRate,
+            currentAnimation.animationType,
+            currentAnimation.introFrames
         );
 
         if (currentAnimation.soundEffect != null
@@ -241,8 +242,9 @@ public class ClickObjectS : MonoBehaviour
         spriteAnimator.Play(
             anim.frames,
             anim.frameRate,
-            anim.loop,
-            anim.pingPong
+            anim.loopFrameRate,
+            anim.animationType,
+            anim.introFrames
         );
 
         StartCoroutine(DistractionLifetime());

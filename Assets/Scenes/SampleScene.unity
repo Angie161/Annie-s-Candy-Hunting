@@ -190,16 +190,6 @@ MonoBehaviour:
     slotSize: 1
     placementZone: 0
     anomalies:
-    - animationName: Gato
-      frames:
-      - {fileID: 21300000, guid: 174df0b4dddff29459488aac858a9998, type: 3}
-      - {fileID: 21300000, guid: 27ba4f40e8bc0cd42bcdb533b97a29bf, type: 3}
-      - {fileID: 21300000, guid: 474cf0c07290cfd42ad60e1c4b815780, type: 3}
-      - {fileID: 21300000, guid: e045063de85a3d14cbfad45d9664ae56, type: 3}
-      loop: 1
-      pingPong: 1
-      frameRate: 0.2
-      soundEffect: {fileID: 8300000, guid: d8ef2b2d6f1b67648bbbdf3064cba7f4, type: 3}
     - animationName: Mano
       frames:
       - {fileID: 21300000, guid: cc005a42d1bab4c438655368fa0cbd49, type: 3}
@@ -207,10 +197,22 @@ MonoBehaviour:
       - {fileID: 21300000, guid: a63072048477ed541931d101d8a21064, type: 3}
       - {fileID: 21300000, guid: dd2d855d1c5109c42bc324cfaad902c9, type: 3}
       - {fileID: 21300000, guid: aa5bcc779e2ad034a9bdb9e1f75bf5b0, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.2
+      loopFrameRate: 0.2
+      animationType: 1
+      introFrames: 2
       soundEffect: {fileID: 8300000, guid: 1e752de07b0cbce4aae79532674f2e04, type: 3}
+    - animationName: Gato
+      frames:
+      - {fileID: 21300000, guid: 174df0b4dddff29459488aac858a9998, type: 3}
+      - {fileID: 21300000, guid: 27ba4f40e8bc0cd42bcdb533b97a29bf, type: 3}
+      - {fileID: 21300000, guid: 474cf0c07290cfd42ad60e1c4b815780, type: 3}
+      - {fileID: 21300000, guid: e045063de85a3d14cbfad45d9664ae56, type: 3}
+      frameRate: 0.2
+      loopFrameRate: 0.2
+      animationType: 1
+      introFrames: 2
+      soundEffect: {fileID: 8300000, guid: d8ef2b2d6f1b67648bbbdf3064cba7f4, type: 3}
     - animationName: Pulpo
       frames:
       - {fileID: 21300000, guid: c506f055b04e7a44687c412097b10611, type: 3}
@@ -219,9 +221,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 936333d3786ab044caf1e246c4cff16d, type: 3}
       - {fileID: 21300000, guid: a1d423d46c0eb8942ac454f5c3e6423a, type: 3}
       - {fileID: 21300000, guid: 97cf02bad1d8afe47ad14fc9e21ef9d6, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.2
+      loopFrameRate: 0.2
+      animationType: 1
+      introFrames: 3
       soundEffect: {fileID: 8300000, guid: 96d64f87f351f1248a53e8d1fb18cf96, type: 3}
     distractions:
     - animationName: Apertura
@@ -229,9 +232,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 7b265a6e319ab6f42a52edb36d77b80c, type: 3}
       - {fileID: 21300000, guid: 8cdb5233e685f844ab5d1c3c0e418c34, type: 3}
       - {fileID: 21300000, guid: 2544ddfc5c716d74a84734458b299ed5, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 1
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 6731251d76475624eb3a5b43b1b9ad4f, type: 3}
     visualType: 2
@@ -250,9 +254,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 33404d3abcd7e814daa6cf6831a3d036, type: 3}
       - {fileID: 21300000, guid: c4f570762f581eb4193ceab823d5ec84, type: 3}
       - {fileID: 21300000, guid: 4935e95f4f2198d449bd2b4b44039e14, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.1
+      loopFrameRate: 0.2
+      animationType: 1
+      introFrames: 8
       soundEffect: {fileID: 8300000, guid: c01b6bf24737d9e429104070c3013dc3, type: 3}
     distractions:
     - animationName: balanceo
@@ -260,9 +265,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 10e795f01761a354cbd8f0875391513b, type: 3}
       - {fileID: 21300000, guid: 52d8e7c1aa4f3924d9121d6bb57d3ea8, type: 3}
       - {fileID: 21300000, guid: 599db0c536d19d64490b28dee8874580, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.3
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: c6bb8cca87db899469c27f9f7449584a, type: 3}
     visualType: 2
@@ -280,9 +286,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 498d12ac25aee45489f72f03a7597921, type: 3}
       - {fileID: 21300000, guid: a88a927d2c64f864ca540da4678a2331, type: 3}
       - {fileID: 21300000, guid: 650583c5ba68b30468ffe17e61930a53, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.2
+      loopFrameRate: 0.15
+      animationType: 1
+      introFrames: 7
       soundEffect: {fileID: 8300000, guid: ad0c3debe608f5944a0b3a0fbfa5a4ad, type: 3}
     distractions:
     - animationName: balanceo
@@ -290,9 +297,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: fb52dc98a18ec8141a4e2ac984efbfd6, type: 3}
       - {fileID: 21300000, guid: 1db8111ba432cb646ab04bb76c36c935, type: 3}
       - {fileID: 21300000, guid: 1b3df7088f74492449635029de0d0695, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.4
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: cc34518fcbdf166488edac3b989bc2f5, type: 3}
     visualType: 0
@@ -307,9 +315,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 71b5e992335bbef4f893b8cc573bef2e, type: 3}
       - {fileID: 21300000, guid: 2a34af66bbc7c364db4494086c439d82, type: 3}
       - {fileID: 21300000, guid: fc681be7e0845784a955885951435aaa, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.1
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 1
       soundEffect: {fileID: 8300000, guid: 01e5149bc980a8449927e38d3c310d63, type: 3}
     distractions:
     - animationName: balanceo
@@ -317,9 +326,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 5b80ea0a82d1986479a3cee19a848e9d, type: 3}
       - {fileID: 21300000, guid: c68e757948000224a8fc84e38e8de355, type: 3}
       - {fileID: 21300000, guid: b320854c713b8474ea64a08cdf601a30, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.4
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 74622f9ee5435d147958b5ecaf23a287, type: 3}
     visualType: 0
@@ -337,9 +347,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 2f2f21bdf8793164c95ff701c898f89b, type: 3}
       - {fileID: 21300000, guid: c5d6aff235f57b54db6e79f833780391, type: 3}
       - {fileID: 21300000, guid: 7da7a1f895d04b643814debb623793db, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.3
+      loopFrameRate: 0.3
+      animationType: 1
+      introFrames: 7
       soundEffect: {fileID: 8300000, guid: 34953e0ca91a9f8428971a7490c4c1cd, type: 3}
     - animationName: turbio
       frames:
@@ -348,9 +359,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 5049c9ea79c1042409c544c03041267e, type: 3}
       - {fileID: 21300000, guid: 26e1f6ab8dc7e0d4f98c70e503cea92c, type: 3}
       - {fileID: 21300000, guid: 16dcf83621f637b4f9739eb49297f349, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.2
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 1
       soundEffect: {fileID: 8300000, guid: 34953e0ca91a9f8428971a7490c4c1cd, type: 3}
     distractions:
     - animationName: balanceo
@@ -358,9 +370,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 4dd03116e901c7e4ba250eb55f42e4c6, type: 3}
       - {fileID: 21300000, guid: bbde78dba008b3244b0ccc56926ee147, type: 3}
       - {fileID: 21300000, guid: 2c3f8f44bb81c7b45887ace3c106f492, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.3
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 4ac44e8964c727c4e98549542d0e3137, type: 3}
     visualType: 1
@@ -380,9 +393,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: cf7a42940f22fa9459e4846e064d7d7e, type: 3}
       - {fileID: 21300000, guid: 58866b95e7fff884f92590cc37950b25, type: 3}
       - {fileID: 21300000, guid: ea1e4f509b5b14e46b93923275fa6324, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.05
+      loopFrameRate: 0.15
+      animationType: 1
+      introFrames: 9
       soundEffect: {fileID: 8300000, guid: 3c8e6298f6604684bb33e55f2862b51c, type: 3}
     - animationName: "se\xF1or"
       frames:
@@ -394,9 +408,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 700fc7b28867937479afd44a14f19f68, type: 3}
       - {fileID: 21300000, guid: db9bad9ae1acb8040a87e9b8b1f5dae4, type: 3}
       - {fileID: 21300000, guid: bf88fb42308832f4f9e7d9349889b924, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.2
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 1
       soundEffect: {fileID: 8300000, guid: 4d41ace4bedb7274b90f8d4da14b1121, type: 3}
     distractions:
     - animationName: balanceo
@@ -404,9 +419,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: b6a51920317845f45a16d7245e92dd9e, type: 3}
       - {fileID: 21300000, guid: 8097798222bd2a04aae3fbebde2dbdc3, type: 3}
       - {fileID: 21300000, guid: 2927e73ecad3c7142a7597e064558d49, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.35
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: c369c7b55b9512c4ea59f5b6b0fc1de6, type: 3}
     visualType: 1
@@ -422,9 +438,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: c84a33c27e8bb8345aecac2bea2a2855, type: 3}
       - {fileID: 21300000, guid: 6afb5b4ea56e1da43b89db396fde6263, type: 3}
       - {fileID: 21300000, guid: 508186a0986e2b14fa4248f4a396531b, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.1
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 1
       soundEffect: {fileID: 8300000, guid: 3931d9d480871604791fd56eca2b7ddf, type: 3}
     distractions:
     - animationName: balanceo
@@ -432,9 +449,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: aee4149ef51992f4cbbd318ae3c0d10e, type: 3}
       - {fileID: 21300000, guid: 14333b230b3653b4085084f30e2f54e5, type: 3}
       - {fileID: 21300000, guid: 740bff92ab9918d4b93816aa2afa0e9b, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.4
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 7a8ddd773ce5480469bb46c0465ddc67, type: 3}
     visualType: 1
@@ -450,9 +468,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 10ebdf1d04dcb0142bf7ca6b7b3f340d, type: 3}
       - {fileID: 21300000, guid: e95a48fd2ba88bc4f98f16c43cd66c05, type: 3}
       - {fileID: 21300000, guid: 4d132cf712ba504458db91bf6c9fce40, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.1
+      loopFrameRate: 0.2
+      animationType: 1
+      introFrames: 4
       soundEffect: {fileID: 8300000, guid: 92d6e52b5b1c9924c8ee1c6a4a21b662, type: 3}
     - animationName: hand
       frames:
@@ -464,9 +483,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 9a1060f7a43c8cb4f87ee5967b9eb042, type: 3}
       - {fileID: 21300000, guid: f3a1048b8a91f82439fe0808f426dc62, type: 3}
       - {fileID: 21300000, guid: b83d2611816e1ab4fb075f3348decc5d, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.15
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 4
       soundEffect: {fileID: 8300000, guid: 162124b948c9a674ab238f02aec75805, type: 3}
     distractions:
     - animationName: flor
@@ -481,18 +501,20 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 400cd2eaf4c148b46aea34c70ab28c6b, type: 3}
       - {fileID: 21300000, guid: 206a027e9d1086540a4a06ddd423ecdf, type: 3}
       - {fileID: 21300000, guid: c5fa6d92c07ba7d4db980a1f96ccda0b, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.4
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 1
       soundEffect: {fileID: 0}
     - animationName: vela
       frames:
       - {fileID: 21300000, guid: c1e4503bee7a4bb46b7bedcd6ae86dc7, type: 3}
       - {fileID: 21300000, guid: 8e4cbf498c30e284eb1d09081817e1c8, type: 3}
       - {fileID: 21300000, guid: f71ff401a2558054abde3181a951bcea, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.3
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: fe2349a2de097804db395af508773e69, type: 3}
     visualType: 1
@@ -510,9 +532,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 667aeadbc8e11c44ab9ac719bd3c5783, type: 3}
       - {fileID: 21300000, guid: 667aeadbc8e11c44ab9ac719bd3c5783, type: 3}
       - {fileID: 21300000, guid: 060a54a81fed7724bb1f9b2545234eb1, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.15
+      loopFrameRate: 0.13
+      animationType: 1
+      introFrames: 5
       soundEffect: {fileID: 8300000, guid: 4cf22a85d5af2914a940680ec2e2d81f, type: 3}
     distractions:
     - animationName: balanceo
@@ -520,9 +543,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 264781c3932f3034ead09a513123e1e7, type: 3}
       - {fileID: 21300000, guid: 9b42aa751d779724a831ab573077817e, type: 3}
       - {fileID: 21300000, guid: f306c260983da00449d73aa1c4929e30, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.4
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 5c72b9a8f3ba22349aeb81e23de7b803, type: 3}
     visualType: 1
@@ -539,9 +563,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: b344bf65f380b614681962e37c199193, type: 3}
       - {fileID: 21300000, guid: 07ccb40fc07d8244ab3ecaede3209cc4, type: 3}
       - {fileID: 21300000, guid: 79e665646597c974582754132bb23f80, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.1
+      loopFrameRate: 0.2
+      animationType: 1
+      introFrames: 6
       soundEffect: {fileID: 8300000, guid: 4cf22a85d5af2914a940680ec2e2d81f, type: 3}
     - animationName: tentaculos
       frames:
@@ -551,9 +576,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 20492d1250879db4ab061e250334fc42, type: 3}
       - {fileID: 21300000, guid: 3a5f4dfb36c33d340a0b75175963e704, type: 3}
       - {fileID: 21300000, guid: f9a0df9ab767fe14789eaa226316e8d1, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.15
+      loopFrameRate: 0.2
+      animationType: 1
+      introFrames: 4
       soundEffect: {fileID: 8300000, guid: c0a8759aba4ea1248bfdb125e7674038, type: 3}
     distractions:
     - animationName: balanceo
@@ -561,9 +587,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: e56d28f4503abc048b828c1dddc8e39c, type: 3}
       - {fileID: 21300000, guid: dc8ace2e521c3fc45b4bcf52d9ecfce3, type: 3}
       - {fileID: 21300000, guid: 10bf4f73d9b171f4885e6e69dcd80f78, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.4
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: bbbccba292d1d5644bc965a0ed896ac6, type: 3}
     visualType: 3
@@ -577,9 +604,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 6c342ddd90ad89a44b2f2262777f5462, type: 3}
       - {fileID: 21300000, guid: 21516c3398eeb774f864b6c6249b067a, type: 3}
       - {fileID: 21300000, guid: c98d5509d56f5a5419f44b553de1a32f, type: 3}
-      loop: 0
-      pingPong: 0
       frameRate: 0.1
+      loopFrameRate: 0.15
+      animationType: 0
+      introFrames: 1
       soundEffect: {fileID: 8300000, guid: d66bd735d7f09884e8186a243aab937f, type: 3}
     distractions:
     - animationName: balanceo
@@ -587,9 +615,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: cc4dfea861c24d34285bbfd268db5251, type: 3}
       - {fileID: 21300000, guid: 56290f11399a7b94a8c0ba0a2a7e340d, type: 3}
       - {fileID: 21300000, guid: cc4dfea861c24d34285bbfd268db5251, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.2
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 9b198a642509dc84a97131c49debdd4c, type: 3}
     visualType: 0
@@ -608,9 +637,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 99649e57aa39668458408bd67aafc6ed, type: 3}
       - {fileID: 21300000, guid: 6c63a1c090c2fdf4d85972817a6ffbc0, type: 3}
       - {fileID: 21300000, guid: 43be21d2e2566dd4895c699d6e1f96ed, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.2
+      loopFrameRate: 0.15
+      animationType: 1
+      introFrames: 6
       soundEffect: {fileID: 8300000, guid: 79fe86995e61c8740b7e1d39d8250497, type: 3}
     distractions:
     - animationName: balanceo
@@ -618,9 +648,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: fae6de24a190cb34281220ebb922914b, type: 3}
       - {fileID: 21300000, guid: 113b7b5456626544598c814ee072ad51, type: 3}
       - {fileID: 21300000, guid: bdbc9e707c5336e4091081da0ec95a70, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.2
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
   - sprite: {fileID: 21300000, guid: 5b0ef3a54c83f1146a8d0addfd6b9f62, type: 3}
     visualType: 1
@@ -639,9 +670,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: c5a41dcf0f5a97046940e1d88bb9a1bf, type: 3}
       - {fileID: 21300000, guid: 0ac565e9eba6320468d3befd4201742e, type: 3}
       - {fileID: 21300000, guid: d48d4070c1e5e5d4cb650a0b473b1c5e, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.1
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 8300000, guid: 43173a87394ffe74db9f9a3bf3436d25, type: 3}
     distractions:
     - animationName: balanceo
@@ -649,9 +681,10 @@ MonoBehaviour:
       - {fileID: 21300000, guid: 566572397106c4c4c99ef4f78bf2374c, type: 3}
       - {fileID: 21300000, guid: 305244fb3b30bba4085c5333cf223ced, type: 3}
       - {fileID: 21300000, guid: 121f646454921c6479da0f915b1b4101, type: 3}
-      loop: 1
-      pingPong: 1
       frameRate: 0.2
+      loopFrameRate: 0.15
+      animationType: 2
+      introFrames: 1
       soundEffect: {fileID: 0}
 --- !u!4 &25028883
 Transform:
@@ -909,6 +942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &52915989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &105098035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &105098042
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2114,6 +2150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &149433349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2644,6 +2681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &224089736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,6 +2939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &260380454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,6 +3838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &270335011
 GameObject:
   m_ObjectHideFlags: 0
@@ -4399,6 +4439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &301639205
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,6 +5101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &475475126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5797,6 +5839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &761418283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6520,6 +6563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &824812385
 GameObject:
   m_ObjectHideFlags: 0
@@ -7274,6 +7318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1058230488
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7966,6 +8011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1146488930
 GameObject:
   m_ObjectHideFlags: 0
@@ -8305,6 +8351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1241079080
 GameObject:
   m_ObjectHideFlags: 0
@@ -9422,6 +9469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1342890671
 GameObject:
   m_ObjectHideFlags: 0
@@ -9567,6 +9615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1342890678
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10481,6 +10530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1504840479
 GameObject:
   m_ObjectHideFlags: 0
@@ -10837,6 +10887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1512492794
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11717,6 +11768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1541047184
 GameObject:
   m_ObjectHideFlags: 0
@@ -11898,6 +11950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1553984825
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13022,6 +13075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1594865262
 GameObject:
   m_ObjectHideFlags: 0
@@ -13467,6 +13521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1709756701
 GameObject:
   m_ObjectHideFlags: 0
@@ -14075,6 +14130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &1777314061
 GameObject:
   m_ObjectHideFlags: 0
@@ -14220,6 +14276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1777314068
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14713,6 +14770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1863120753
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15318,6 +15376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1892302235
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15900,6 +15959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1936371470
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16782,6 +16842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &1983805951
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17782,6 +17843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!1 &2035245689
 GameObject:
   m_ObjectHideFlags: 0
@@ -18068,6 +18130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!60 &2065791653
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18407,9 +18470,10 @@ MonoBehaviour:
     - {fileID: 21300000, guid: aa1fd8bc82a8ae644b022c60a7e47c7a, type: 3}
     - {fileID: 21300000, guid: 27eb301e84b34e346b57a9d6d38ee133, type: 3}
     - {fileID: 21300000, guid: d41d9d40d8a2d984bae4acd91fc319f0, type: 3}
-    loop: 1
-    pingPong: 1
     frameRate: 0.1
+    loopFrameRate: 0.1
+    animationType: 2
+    introFrames: 1
     soundEffect: {fileID: 0}
   ghostSound: {fileID: 0}
 --- !u!114 &2105641195
@@ -18424,6 +18488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c798f7a6c6c09654993c3b1444a99c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimator
+  loopFrameRate: 0.15
 --- !u!212 &2105641196
 SpriteRenderer:
   serializedVersion: 2
