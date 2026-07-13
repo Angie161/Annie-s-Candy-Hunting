@@ -81,7 +81,7 @@ public class PlayerSkin : MonoBehaviour
     {
         HideAllSkins();
         skinGhostUI.SetActive(!skinGhostUI.activeSelf);
-        distorsionUI.SetActive(!distorsionUI.activeSelf);
+        distorsionUI.SetActive(false);
         SetSkinPrice("Ghost", 900);
     }
 
@@ -89,7 +89,7 @@ public class PlayerSkin : MonoBehaviour
     {
         HideAllSkins();
         skinSkeletonUI.SetActive(!skinSkeletonUI.activeSelf);
-        distorsionUI.SetActive(!distorsionUI.activeSelf);
+        distorsionUI.SetActive(false);
         SetSkinPrice("Skeleton", 900);
     }
 
@@ -97,7 +97,7 @@ public class PlayerSkin : MonoBehaviour
     {
         HideAllSkins();
         skinRedHoodUI.SetActive(!skinRedHoodUI.activeSelf);
-        distorsionUI.SetActive(!distorsionUI.activeSelf);
+        distorsionUI.SetActive(false);
         SetSkinPrice("RedHood", 1000);
     }
 
@@ -113,7 +113,7 @@ public class PlayerSkin : MonoBehaviour
     {
         HideAllSkins();
         skinFairyUI.SetActive(!skinFairyUI.activeSelf);
-        distorsionUI.SetActive(true );
+        distorsionUI.SetActive(true);
         SetSkinPrice("Fairy", 500);
     }
 
